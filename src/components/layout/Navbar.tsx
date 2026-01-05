@@ -45,7 +45,7 @@ export function Navbar() {
       <div className="container-wide flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <img src={logo} alt="Zanscode" className="h-8 w-auto" />
+          <img src={logo} alt="Zanscode" className="h-6 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}

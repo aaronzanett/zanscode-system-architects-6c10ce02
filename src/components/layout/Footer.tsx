@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import logo from '@/assets/logo_web.png';
 
 export function Footer() {
   const { t } = useLanguage();
@@ -25,9 +26,7 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-4">
-              <span className="text-2xl font-bold tracking-tight">
-                Zans<span className="text-cyan-400">code</span>
-              </span>
+              <img src={logo} alt="Zanscode" className="h-6 w-auto brightness-0 invert" />
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed">
               {t('footer.tagline')}
