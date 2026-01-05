@@ -4,6 +4,7 @@ import { Menu, X, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
+import logo from '@/assets/logo_web.png';
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -43,10 +44,8 @@ export function Navbar() {
     >
       <div className="container-wide flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2">
-          <span className="text-2xl font-bold tracking-tight text-primary">
-            Zans<span className="text-secondary">code</span>
-          </span>
+        <Link to="/" className="flex items-center">
+          <img src={logo} alt="Zanscode" className="h-8 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}
