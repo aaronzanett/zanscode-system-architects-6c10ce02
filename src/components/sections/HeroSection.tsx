@@ -48,7 +48,7 @@ export function HeroSection() {
               asChild
               variant="outline"
               size="lg"
-              className="border-slate-500 text-white hover:bg-white/10 hover:border-white text-base px-8 py-6 rounded-xl font-medium transition-all duration-300"
+              className="bg-transparent border border-white/60 text-white hover:bg-white/10 hover:border-white text-base px-8 py-6 rounded-xl font-medium transition-all duration-300"
             >
               <Link to="/how-we-work">
                 {t('hero.cta.secondary')}
