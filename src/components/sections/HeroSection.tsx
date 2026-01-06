@@ -60,7 +60,7 @@ export function HeroSection() {
       </div>
 
       {/* Bottom gradient fade - positioned below the fold */}
-      <div className="absolute top-full left-0 right-0 h-32 bg-gradient-to-b from-dark-800 to-background" />
+      <div className="absolute top-full left-0 right-0 h-48 bg-gradient-to-b from-dark-800 via-dark-800/50 to-background" />
     </section>
   );
 }
