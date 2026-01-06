@@ -40,7 +40,6 @@ export function HeroSection() {
             >
               <Link to="/contact">
                 {t('hero.cta.primary')}
-                <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
 
