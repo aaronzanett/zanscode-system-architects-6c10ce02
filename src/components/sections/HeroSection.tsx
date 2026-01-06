@@ -8,7 +8,7 @@ export function HeroSection() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden gradient-dark">
+    <section className="relative h-screen flex items-center overflow-visible gradient-dark">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
@@ -59,8 +59,8 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+      {/* Bottom gradient fade - positioned below the fold */}
+      <div className="absolute top-full left-0 right-0 h-32 bg-gradient-to-b from-dark-800 to-background" />
     </section>
   );
 }
