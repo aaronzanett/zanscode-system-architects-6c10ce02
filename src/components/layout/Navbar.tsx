@@ -70,7 +70,7 @@ export function Navbar() {
         <div className="hidden lg:flex items-center gap-4">
           <button
             onClick={toggleLanguage}
-            className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-secondary transition-colors"
           >
             <Globe className="h-4 w-4" />
             {language.toUpperCase()}
@@ -111,7 +111,7 @@ export function Navbar() {
             <div className="pt-4 border-t border-border flex items-center justify-between">
               <button
                 onClick={toggleLanguage}
-                className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-secondary transition-colors"
               >
                 <Globe className="h-4 w-4" />
                 {language === 'id' ? 'Bahasa Indonesia' : 'English'}
