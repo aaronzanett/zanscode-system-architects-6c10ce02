@@ -28,7 +28,7 @@ export function TrustSection() {
   ];
 
   return (
-    <section className="pt-40 pb-24 bg-background">
+    <section className="pt-56 pb-24 bg-background">
       <div className="container-wide">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
