@@ -102,7 +102,7 @@ export function HeroSection() {
             <Button
               asChild
               size="lg"
-              className="bg-secondary hover:bg-secondary/80 text-white text-base px-8 py-6 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-secondary hover:bg-secondary text-white text-base px-8 py-6 rounded-xl font-semibold shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
             >
               <Link to="/contact">
                 {t('hero.cta.primary')}
@@ -113,7 +113,7 @@ export function HeroSection() {
               asChild
               variant="outline"
               size="lg"
-              className="bg-transparent border border-primary/30 text-primary hover:bg-primary/5 hover:border-primary/50 text-base px-8 py-6 rounded-xl font-medium transition-all duration-300"
+              className="bg-transparent border border-foreground/80 text-foreground hover:bg-transparent hover:-translate-y-0.5 hover:shadow-md text-base px-8 py-6 rounded-xl font-medium transition-all duration-300"
             >
               <Link to="/how-we-work">
                 {t('hero.cta.secondary')}
