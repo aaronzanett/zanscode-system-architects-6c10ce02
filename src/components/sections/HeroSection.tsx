@@ -30,15 +30,14 @@ export function HeroSection() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-background via-background to-secondary/10">
-      {/* Richer gradient overlays for depth */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/8" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-secondary/5 to-transparent" />
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-background via-background to-secondary/5">
+      {/* Subtle gradient overlays for depth */}
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/3 via-transparent to-accent/5" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-secondary/3 to-transparent" />
       
-      {/* Enhanced soft radial glow */}
-      <div className="absolute top-1/4 right-1/4 w-[700px] h-[700px] bg-secondary/12 rounded-full blur-[140px]" />
-      <div className="absolute bottom-1/4 left-1/4 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[120px]" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-primary/4 rounded-full blur-[150px]" />
+      {/* Soft radial glow */}
+      <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] bg-secondary/8 rounded-full blur-[120px]" />
+      <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] bg-accent/6 rounded-full blur-[100px]" />
 
       {/* Floating UI Icons - Left side */}
       <FloatingIcon icon={Code2} className="top-32 left-[8%] w-8 h-8" delay={0} duration={7} />
@@ -49,6 +48,15 @@ export function HeroSection() {
       <FloatingIcon icon={Cloud} className="top-40 right-[10%] w-9 h-9" delay={0.5} duration={7.5} />
       <FloatingIcon icon={Zap} className="top-1/2 right-[8%] w-5 h-5" delay={2} duration={6.5} />
       <FloatingIcon icon={Layers} className="bottom-1/4 right-[12%] w-7 h-7" delay={1} duration={8} />
+
+      {/* Subtle grid pattern overlay */}
+      <div 
+        className="absolute inset-0 opacity-[0.02]"
+        style={{
+          backgroundImage: `linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)`,
+          backgroundSize: '60px 60px'
+        }}
+      />
 
       {/* Content */}
       <div className="container-wide relative z-10 pt-32 pb-24">
