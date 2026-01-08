@@ -102,7 +102,7 @@ export function HeroSection() {
             <Button
               asChild
               size="lg"
-              className="bg-secondary hover:bg-secondary/90 text-white text-base px-8 py-6 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-secondary hover:bg-secondary/80 text-white text-base px-8 py-6 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <Link to="/contact">
                 {t('hero.cta.primary')}
