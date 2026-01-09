@@ -1,116 +1,198 @@
-import { ReactNode } from 'react';
-
 interface PageHeaderProps {
   title: string;
   subtitle: string;
   illustration?: 'services' | 'process' | 'about' | 'saas' | 'contact';
 }
 
-// Abstract SVG illustrations for each page type
+// Descriptive SVG illustrations for each page type
 const illustrations = {
   services: (
     <svg viewBox="0 0 400 300" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="200" cy="150" r="80" className="fill-secondary/10" />
-      <circle cx="280" cy="100" r="50" className="fill-accent/15" />
-      <circle cx="140" cy="200" r="40" className="fill-primary/10" />
-      <rect x="180" y="120" width="80" height="60" rx="8" className="fill-secondary/20" />
-      <rect x="200" y="140" width="40" height="20" rx="4" className="fill-secondary/30" />
-      <path d="M160 180 L180 160 L200 175 L220 155 L240 170" className="stroke-secondary/40" strokeWidth="3" strokeLinecap="round" />
-      <rect x="250" y="80" width="60" height="40" rx="6" className="fill-accent/20" />
-      <circle cx="280" cy="100" r="10" className="fill-accent/30" />
-      <rect x="120" y="180" width="50" height="35" rx="6" className="fill-primary/15" />
-      <path d="M130 195 L145 185 L160 200" className="stroke-primary/30" strokeWidth="2" strokeLinecap="round" />
+      {/* Server/System Integration */}
+      <rect x="140" y="60" width="120" height="80" rx="8" className="fill-secondary/20 stroke-secondary/40" strokeWidth="2" />
+      <rect x="155" y="75" width="90" height="12" rx="2" className="fill-secondary/30" />
+      <rect x="155" y="95" width="70" height="8" rx="2" className="fill-secondary/25" />
+      <rect x="155" y="110" width="50" height="8" rx="2" className="fill-secondary/20" />
+      <circle cx="250" cy="80" r="6" className="fill-accent/50" />
+      <circle cx="250" cy="100" r="6" className="fill-secondary/40" />
+      
+      {/* Connected Services */}
+      <rect x="60" y="160" width="80" height="60" rx="6" className="fill-accent/15 stroke-accent/30" strokeWidth="2" />
+      <rect x="72" y="175" width="56" height="8" rx="2" className="fill-accent/30" />
+      <rect x="72" y="190" width="40" height="6" rx="2" className="fill-accent/20" />
+      
+      <rect x="260" y="160" width="80" height="60" rx="6" className="fill-primary/12 stroke-primary/25" strokeWidth="2" />
+      <rect x="272" y="175" width="56" height="8" rx="2" className="fill-primary/25" />
+      <rect x="272" y="190" width="40" height="6" rx="2" className="fill-primary/18" />
+      
+      {/* Connection Lines */}
+      <path d="M200 140 L100 160" className="stroke-secondary/30" strokeWidth="2" strokeDasharray="4 3" />
+      <path d="M200 140 L300 160" className="stroke-secondary/30" strokeWidth="2" strokeDasharray="4 3" />
+      <path d="M140 190 L260 190" className="stroke-accent/25" strokeWidth="2" strokeDasharray="6 4" />
+      
+      {/* Gear Icon */}
+      <circle cx="320" cy="80" r="25" className="fill-secondary/10" />
+      <circle cx="320" cy="80" r="15" className="stroke-secondary/40" strokeWidth="3" fill="none" />
+      <circle cx="320" cy="80" r="5" className="fill-secondary/40" />
     </svg>
   ),
   process: (
     <svg viewBox="0 0 400 300" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="100" cy="80" r="30" className="fill-secondary/20" />
-      <circle cx="200" cy="150" r="35" className="fill-secondary/25" />
-      <circle cx="300" cy="80" r="30" className="fill-secondary/20" />
-      <circle cx="150" cy="220" r="28" className="fill-accent/20" />
-      <circle cx="280" cy="200" r="32" className="fill-accent/15" />
-      <path d="M130 80 L165 120" className="stroke-secondary/30" strokeWidth="3" strokeLinecap="round" strokeDasharray="6 4" />
-      <path d="M235 130 L270 95" className="stroke-secondary/30" strokeWidth="3" strokeLinecap="round" strokeDasharray="6 4" />
-      <path d="M185 175 L165 200" className="stroke-secondary/30" strokeWidth="3" strokeLinecap="round" strokeDasharray="6 4" />
-      <path d="M230 165 L260 185" className="stroke-accent/30" strokeWidth="3" strokeLinecap="round" strokeDasharray="6 4" />
-      <rect x="85" y="65" width="30" height="30" rx="4" className="fill-none stroke-secondary/40" strokeWidth="2" />
-      <polygon points="200,130 215,160 185,160" className="fill-secondary/30" />
-      <rect x="140" y="205" width="20" height="30" rx="3" className="fill-accent/25" />
+      {/* Step 1 - Discovery */}
+      <circle cx="80" cy="80" r="28" className="fill-secondary/20 stroke-secondary/40" strokeWidth="2" />
+      <text x="80" y="86" textAnchor="middle" className="fill-secondary/70 text-sm font-bold">01</text>
+      
+      {/* Step 2 - Planning */}
+      <circle cx="180" cy="80" r="28" className="fill-secondary/25 stroke-secondary/45" strokeWidth="2" />
+      <text x="180" y="86" textAnchor="middle" className="fill-secondary/70 text-sm font-bold">02</text>
+      
+      {/* Step 3 - Development */}
+      <circle cx="280" cy="80" r="28" className="fill-secondary/30 stroke-secondary/50" strokeWidth="2" />
+      <text x="280" y="86" textAnchor="middle" className="fill-secondary/80 text-sm font-bold">03</text>
+      
+      {/* Connection arrows */}
+      <path d="M108 80 L152 80" className="stroke-secondary/40" strokeWidth="2" markerEnd="url(#arrow)" />
+      <path d="M208 80 L252 80" className="stroke-secondary/40" strokeWidth="2" />
+      
+      {/* Document/Checklist */}
+      <rect x="60" y="140" width="70" height="90" rx="6" className="fill-accent/15 stroke-accent/30" strokeWidth="2" />
+      <rect x="72" y="155" width="46" height="6" rx="1" className="fill-accent/35" />
+      <rect x="72" y="168" width="38" height="6" rx="1" className="fill-accent/25" />
+      <rect x="72" y="181" width="42" height="6" rx="1" className="fill-accent/30" />
+      <rect x="72" y="194" width="30" height="6" rx="1" className="fill-accent/20" />
+      
+      {/* Code Window */}
+      <rect x="165" y="140" width="90" height="90" rx="6" className="fill-secondary/15 stroke-secondary/30" strokeWidth="2" />
+      <rect x="165" y="140" width="90" height="18" rx="6" className="fill-secondary/25" />
+      <circle cx="178" cy="149" r="4" className="fill-red-400/60" />
+      <circle cx="190" cy="149" r="4" className="fill-yellow-400/60" />
+      <circle cx="202" cy="149" r="4" className="fill-green-400/60" />
+      <rect x="175" y="168" width="50" height="5" rx="1" className="fill-secondary/30" />
+      <rect x="175" y="180" width="65" height="5" rx="1" className="fill-accent/35" />
+      <rect x="175" y="192" width="40" height="5" rx="1" className="fill-secondary/25" />
+      
+      {/* Handshake/Partnership */}
+      <circle cx="320" cy="185" r="40" className="fill-primary/10 stroke-primary/20" strokeWidth="2" />
+      <path d="M295 185 L310 175 L325 185 L340 175" className="stroke-primary/40" strokeWidth="3" strokeLinecap="round" />
+      <path d="M300 195 L320 205 L340 195" className="stroke-primary/30" strokeWidth="2" strokeLinecap="round" />
     </svg>
   ),
   about: (
     <svg viewBox="0 0 400 300" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="200" cy="150" r="90" className="fill-secondary/8" />
-      <circle cx="200" cy="150" r="60" className="fill-secondary/12" />
-      <circle cx="200" cy="150" r="30" className="fill-secondary/20" />
-      <path d="M120 100 C150 80, 250 80, 280 100" className="stroke-accent/30" strokeWidth="3" strokeLinecap="round" />
-      <path d="M100 150 C100 100, 150 60, 200 60" className="stroke-secondary/25" strokeWidth="2" strokeLinecap="round" strokeDasharray="8 4" />
-      <path d="M300 150 C300 100, 250 60, 200 60" className="stroke-secondary/25" strokeWidth="2" strokeLinecap="round" strokeDasharray="8 4" />
-      <circle cx="130" cy="200" r="20" className="fill-accent/20" />
-      <circle cx="270" cy="200" r="20" className="fill-accent/20" />
-      <rect x="185" y="220" width="30" height="20" rx="4" className="fill-primary/15" />
+      {/* Mission/Target */}
+      <circle cx="200" cy="130" r="70" className="stroke-secondary/20" strokeWidth="2" fill="none" />
+      <circle cx="200" cy="130" r="50" className="stroke-secondary/30" strokeWidth="2" fill="none" />
+      <circle cx="200" cy="130" r="30" className="stroke-secondary/40" strokeWidth="2" fill="none" />
+      <circle cx="200" cy="130" r="12" className="fill-secondary/50" />
+      
+      {/* Arrow hitting target */}
+      <path d="M280 50 L212 118" className="stroke-accent/50" strokeWidth="3" strokeLinecap="round" />
+      <polygon points="212,118 220,112 218,122" className="fill-accent/50" />
+      
+      {/* Team/People Icons */}
+      <circle cx="100" cy="220" r="20" className="fill-secondary/20" />
+      <circle cx="100" cy="205" r="10" className="fill-secondary/30" />
+      <path d="M80 235 Q100 250 120 235" className="stroke-secondary/30" strokeWidth="2" fill="none" />
+      
+      <circle cx="200" cy="240" r="22" className="fill-accent/15" />
+      <circle cx="200" cy="223" r="11" className="fill-accent/25" />
+      <path d="M178 258 Q200 275 222 258" className="stroke-accent/25" strokeWidth="2" fill="none" />
+      
+      <circle cx="300" cy="220" r="20" className="fill-primary/15" />
+      <circle cx="300" cy="205" r="10" className="fill-primary/25" />
+      <path d="M280 235 Q300 250 320 235" className="stroke-primary/25" strokeWidth="2" fill="none" />
+      
+      {/* Connection between team */}
+      <path d="M120 220 L178 235" className="stroke-secondary/20" strokeWidth="1.5" strokeDasharray="4 3" />
+      <path d="M222 235 L280 220" className="stroke-secondary/20" strokeWidth="1.5" strokeDasharray="4 3" />
     </svg>
   ),
   saas: (
     <svg viewBox="0 0 400 300" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="130" y="80" width="140" height="100" rx="10" className="fill-secondary/15" />
-      <rect x="145" y="95" width="110" height="70" rx="6" className="fill-secondary/10" />
-      <rect x="155" y="105" width="40" height="25" rx="3" className="fill-accent/25" />
-      <rect x="205" y="105" width="40" height="25" rx="3" className="fill-secondary/25" />
-      <rect x="155" y="135" width="90" height="20" rx="3" className="fill-secondary/20" />
-      <circle cx="300" cy="120" r="40" className="fill-accent/15" />
-      <path d="M285 120 L300 110 L300 130 Z" className="fill-accent/30" />
-      <rect x="80" y="180" width="80" height="60" rx="8" className="fill-primary/12" />
-      <rect x="90" y="195" width="60" height="8" rx="2" className="fill-primary/20" />
-      <rect x="90" y="210" width="45" height="8" rx="2" className="fill-primary/15" />
-      <rect x="90" y="225" width="55" height="8" rx="2" className="fill-primary/20" />
-      <path d="M200 190 L200 250" className="stroke-secondary/20" strokeWidth="2" strokeDasharray="4 4" />
-      <path d="M270 160 L200 190" className="stroke-accent/20" strokeWidth="2" strokeDasharray="4 4" />
-      <path d="M130 180 L200 190" className="stroke-primary/20" strokeWidth="2" strokeDasharray="4 4" />
+      {/* Cloud Shape */}
+      <ellipse cx="200" cy="90" rx="80" ry="45" className="fill-secondary/15 stroke-secondary/30" strokeWidth="2" />
+      <ellipse cx="140" cy="100" rx="40" ry="25" className="fill-secondary/12" />
+      <ellipse cx="260" cy="100" rx="40" ry="25" className="fill-secondary/12" />
+      
+      {/* Dashboard/Analytics */}
+      <rect x="100" y="150" width="200" height="120" rx="8" className="fill-background stroke-secondary/30" strokeWidth="2" />
+      <rect x="100" y="150" width="200" height="25" rx="8" className="fill-secondary/15" />
+      <circle cx="118" cy="162" r="5" className="fill-accent/50" />
+      <circle cx="134" cy="162" r="5" className="fill-secondary/40" />
+      
+      {/* Chart bars */}
+      <rect x="120" y="230" width="20" height="25" rx="2" className="fill-accent/40" />
+      <rect x="150" y="210" width="20" height="45" rx="2" className="fill-secondary/35" />
+      <rect x="180" y="195" width="20" height="60" rx="2" className="fill-accent/50" />
+      <rect x="210" y="220" width="20" height="35" rx="2" className="fill-secondary/40" />
+      <rect x="240" y="200" width="20" height="55" rx="2" className="fill-accent/45" />
+      <rect x="270" y="185" width="20" height="70" rx="2" className="fill-secondary/50" />
+      
+      {/* Upward trend line */}
+      <path d="M130 245 L160 225 L190 210 L220 235 L250 215 L280 190" className="stroke-accent/60" strokeWidth="3" strokeLinecap="round" fill="none" />
+      
+      {/* Data flow lines */}
+      <path d="M200 135 L200 150" className="stroke-secondary/40" strokeWidth="2" strokeDasharray="4 3" />
+      <path d="M150 120 L150 150" className="stroke-secondary/30" strokeWidth="1.5" strokeDasharray="3 3" />
+      <path d="M250 120 L250 150" className="stroke-secondary/30" strokeWidth="1.5" strokeDasharray="3 3" />
     </svg>
   ),
   contact: (
     <svg viewBox="0 0 400 300" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="120" y="80" width="160" height="120" rx="12" className="fill-secondary/15" />
-      <path d="M130 95 L200 145 L270 95" className="stroke-secondary/30" strokeWidth="3" strokeLinecap="round" />
-      <path d="M130 185 L170 150" className="stroke-secondary/20" strokeWidth="2" strokeLinecap="round" />
-      <path d="M270 185 L230 150" className="stroke-secondary/20" strokeWidth="2" strokeLinecap="round" />
-      <circle cx="320" cy="100" r="25" className="fill-accent/20" />
-      <circle cx="320" cy="100" r="12" className="fill-accent/30" />
-      <circle cx="80" cy="180" r="30" className="fill-primary/12" />
-      <rect x="68" y="170" width="24" height="20" rx="3" className="fill-primary/20" />
-      <circle cx="300" cy="220" r="35" className="fill-secondary/10" />
-      <path d="M285 220 L300 205 L315 220 L300 235 Z" className="fill-secondary/20" />
-      <path d="M200 210 L200 260" className="stroke-secondary/15" strokeWidth="2" />
-      <path d="M180 240 L220 240" className="stroke-secondary/15" strokeWidth="2" />
+      {/* Email/Message */}
+      <rect x="100" y="60" width="160" height="110" rx="10" className="fill-secondary/15 stroke-secondary/35" strokeWidth="2" />
+      <path d="M105 70 L180 120 L255 70" className="stroke-secondary/40" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+      <path d="M105 160 L150 125" className="stroke-secondary/25" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M255 160 L210 125" className="stroke-secondary/25" strokeWidth="1.5" strokeLinecap="round" />
+      
+      {/* Chat Bubbles */}
+      <rect x="280" y="70" width="90" height="50" rx="8" className="fill-accent/20 stroke-accent/35" strokeWidth="2" />
+      <polygon points="290,120 280,135 305,120" className="fill-accent/20 stroke-accent/35" strokeWidth="2" />
+      <rect x="292" y="85" width="60" height="6" rx="2" className="fill-accent/40" />
+      <rect x="292" y="98" width="45" height="6" rx="2" className="fill-accent/30" />
+      
+      {/* Phone/Call */}
+      <circle cx="100" cy="220" r="35" className="fill-primary/12 stroke-primary/25" strokeWidth="2" />
+      <path d="M85 205 Q85 215 90 220 Q95 225 100 225 L105 230 Q115 235 120 230 L125 225 Q130 220 125 210 L120 205 Q115 200 105 205 L100 210 Q95 215 90 210 L85 205" className="fill-primary/30" />
+      
+      {/* Location Pin */}
+      <path d="M320 180 Q320 200 300 230 Q280 200 280 180 Q280 165 300 165 Q320 165 320 180" className="fill-secondary/20 stroke-secondary/35" strokeWidth="2" />
+      <circle cx="300" cy="185" r="10" className="fill-secondary/40" />
+      
+      {/* Connection dots */}
+      <circle cx="200" cy="200" r="4" className="fill-secondary/40" />
+      <path d="M135 220 L196 200" className="stroke-secondary/25" strokeWidth="1.5" strokeDasharray="4 3" />
+      <path d="M204 200 L280 200" className="stroke-secondary/25" strokeWidth="1.5" strokeDasharray="4 3" />
     </svg>
   ),
 };
 
 export function PageHeader({ title, subtitle, illustration = 'services' }: PageHeaderProps) {
   return (
-    <section className="relative pt-32 pb-20 bg-background overflow-hidden">
-      {/* Subtle gradient overlays */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-secondary/3 to-secondary/8" />
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/3 via-transparent to-transparent" />
+    <section className="relative pt-28 pb-16 bg-background overflow-hidden">
+      {/* Stronger gradient overlays */}
+      <div className="absolute inset-0 bg-gradient-to-r from-secondary/5 via-secondary/8 to-accent/15" />
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-secondary/5" />
+      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-accent/5 to-secondary/10" />
       
-      {/* Radial glow on the right */}
-      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-accent/8 via-secondary/4 to-transparent rounded-full blur-3xl" />
+      {/* Radial glow on the right - stronger */}
+      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-radial from-accent/12 via-secondary/8 to-transparent rounded-full blur-3xl" />
+      <div className="absolute top-0 right-1/4 w-[300px] h-[300px] bg-gradient-radial from-secondary/10 to-transparent rounded-full blur-2xl" />
       
       <div className="container-wide relative z-10">
-        <div className="flex items-center justify-between gap-8">
+        <div className="flex items-center justify-between gap-6">
           {/* Text content */}
           <div className="max-w-2xl flex-1">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground tracking-tight animate-fade-up">
+            <h1 className="text-4xl sm:text-5xl lg:text-5xl font-bold text-foreground tracking-tight animate-fade-up">
               {title}
             </h1>
-            <p className="mt-6 text-xl text-muted-foreground leading-relaxed animate-fade-up-delay-1">
+            <p className="mt-4 text-lg text-muted-foreground leading-relaxed animate-fade-up-delay-1">
               {subtitle}
             </p>
           </div>
           
           {/* Illustration */}
-          <div className="hidden lg:block w-[340px] h-[260px] flex-shrink-0 animate-fade-up-delay-1">
+          <div className="hidden lg:block w-[320px] h-[240px] flex-shrink-0 animate-fade-up-delay-1">
             {illustrations[illustration]}
           </div>
         </div>
