@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
+import { PageHeader } from '@/components/sections/PageHeader';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ArrowRight, Workflow, BarChart3, Plug } from 'lucide-react';
@@ -30,19 +31,11 @@ const SaaS = () => {
 
   return (
     <Layout>
-      {/* Hero */}
-      <section className="pt-32 pb-20 gradient-dark text-white">
-        <div className="container-wide">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight animate-fade-up">
-              {t('saas.title')}
-            </h1>
-            <p className="mt-6 text-xl text-slate-300 leading-relaxed animate-fade-up-delay-1">
-              {t('saas.subtitle')}
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHeader
+        title={t('saas.title')}
+        subtitle={t('saas.subtitle')}
+        illustration="saas"
+      />
 
       {/* Vision */}
       <section className="section-padding bg-background">

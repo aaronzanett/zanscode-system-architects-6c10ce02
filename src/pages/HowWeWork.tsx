@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
+import { PageHeader } from '@/components/sections/PageHeader';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ArrowRight, Search, Map, FileText, Code, Handshake } from 'lucide-react';
@@ -42,19 +43,11 @@ const HowWeWork = () => {
 
   return (
     <Layout>
-      {/* Hero */}
-      <section className="pt-32 pb-20 gradient-dark text-white">
-        <div className="container-wide">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight animate-fade-up">
-              {t('howwework.title')}
-            </h1>
-            <p className="mt-6 text-xl text-slate-300 leading-relaxed animate-fade-up-delay-1">
-              {t('howwework.subtitle')}
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHeader
+        title={t('howwework.title')}
+        subtitle={t('howwework.subtitle')}
+        illustration="process"
+      />
 
       {/* Steps */}
       <section className="section-padding bg-background">
