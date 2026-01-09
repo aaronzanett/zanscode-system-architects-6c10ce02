@@ -169,15 +169,18 @@ const illustrations = {
 
 export function PageHeader({ title, subtitle, illustration = 'services' }: PageHeaderProps) {
   return (
-    <section className="relative pt-28 pb-16 bg-background overflow-hidden">
-      {/* Stronger gradient overlays */}
-      <div className="absolute inset-0 bg-gradient-to-r from-secondary/5 via-secondary/8 to-accent/15" />
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-secondary/5" />
-      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-accent/5 to-secondary/10" />
+    <section className="relative pt-28 pb-8 bg-white overflow-hidden">
+      {/* Aurora-like gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-secondary/8 via-transparent to-accent/10" />
+      <div className="absolute inset-0 bg-gradient-to-tr from-accent/5 via-secondary/3 to-primary/8" />
       
-      {/* Radial glow on the right - stronger */}
-      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-radial from-accent/12 via-secondary/8 to-transparent rounded-full blur-3xl" />
-      <div className="absolute top-0 right-1/4 w-[300px] h-[300px] bg-gradient-radial from-secondary/10 to-transparent rounded-full blur-2xl" />
+      {/* Soft aurora blobs */}
+      <div className="absolute top-0 left-1/4 w-[400px] h-[300px] bg-gradient-radial from-secondary/12 via-secondary/5 to-transparent rounded-full blur-3xl" />
+      <div className="absolute top-1/3 right-0 w-[350px] h-[350px] bg-gradient-radial from-accent/15 via-accent/5 to-transparent rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-gradient-radial from-primary/8 via-secondary/4 to-transparent rounded-full blur-3xl" />
+      
+      {/* Bottom fade to blend with next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent via-white/50 to-background" />
       
       <div className="container-wide relative z-10">
         <div className="flex items-center justify-between gap-6">
