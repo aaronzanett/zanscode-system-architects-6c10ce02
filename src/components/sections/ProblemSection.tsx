@@ -43,9 +43,9 @@ export function ProblemSection() {
           {problems.map((problem, index) => (
             <div
               key={index}
-              className="flex gap-5 p-6 rounded-xl bg-background border border-border hover:border-destructive/30 transition-all duration-300"
+              className="group flex gap-5 p-6 rounded-xl bg-background border border-border hover:border-destructive/30 hover:shadow-premium transition-all duration-300"
             >
-              <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-destructive/10 flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-destructive/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <problem.icon className="h-6 w-6 text-destructive" />
               </div>
               <div>
