@@ -20,11 +20,19 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.cta': 'Diskusikan Bisnis Anda',
 
     // Hero
-    'hero.title': 'Kami Tidak Membangun Website.',
-    'hero.titleHighlight': 'Kami Membangun Sistem.',
-    'hero.subtitle': 'Zanscode adalah mitra solusi sistem untuk bisnis serius yang ingin berkembang. Kami merancang dan membangun sistem bisnis kustom yang skalabel, terstruktur, dan siap untuk pertumbuhan jangka panjang.',
-    'hero.cta.primary': 'Diskusikan Bisnis Anda',
-    'hero.cta.secondary': 'Lihat Cara Kerja Kami',
+    'hero.headline.part1': 'Solusi Sistem Bisnis',
+    'hero.headline.part2': 'Terpercaya untuk Pertumbuhan',
+    'hero.subtitle': 'Zanscode membantu bisnis serius merancang sistem digital yang scalable, terstruktur, dan siap untuk tumbuh bersama bisnis Anda.',
+    'hero.cta.primary': 'Mulai Sekarang',
+    'hero.cta.secondary': 'Lihat Demo',
+    'hero.metric.without': 'Tanpa Zanscode',
+    'hero.metric.with': 'Dengan Zanscode',
+    'hero.customers': 'Klien Kami',
+    'hero.security': 'Keamanan Terjamin',
+    'hero.team': 'Tim Anda',
+    'hero.trust.enterprise': 'Enterprise-ready',
+    'hero.trust.custom': 'Custom System',
+    'hero.trust.support': 'Long-term Support',
 
     // Trust
     'trust.title': 'Dibangun untuk Bisnis yang Berkembang',
@@ -193,11 +201,19 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.cta': 'Discuss Your Business',
 
     // Hero
-    'hero.title': "We Don't Build Websites.",
-    'hero.titleHighlight': 'We Build Systems.',
-    'hero.subtitle': 'Zanscode is a system solution partner for serious businesses ready to grow. We design and build custom business systems that are scalable, structured, and ready for long-term growth.',
-    'hero.cta.primary': 'Discuss Your Business',
-    'hero.cta.secondary': 'See How We Work',
+    'hero.headline.part1': 'Trusted Business System',
+    'hero.headline.part2': 'Solution for Growth',
+    'hero.subtitle': 'Zanscode helps serious businesses design scalable, structured digital systems ready to grow with your business.',
+    'hero.cta.primary': 'Get Started',
+    'hero.cta.secondary': 'View Demo',
+    'hero.metric.without': 'Without Zanscode',
+    'hero.metric.with': 'With Zanscode',
+    'hero.customers': 'Our Clients',
+    'hero.security': 'Secured Protection',
+    'hero.team': 'Your Team',
+    'hero.trust.enterprise': 'Enterprise-ready',
+    'hero.trust.custom': 'Custom System',
+    'hero.trust.support': 'Long-term Support',
 
     // Trust
     'trust.title': 'Built for Growing Businesses',
