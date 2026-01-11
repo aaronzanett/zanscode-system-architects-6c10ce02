@@ -13,6 +13,7 @@ const Services = () => {
       icon: Server,
       title: t('services.1.title'),
       description: t('services.1.desc'),
+      bgColor: 'bg-[hsl(var(--service-systems))]',
       features: [
         'Custom workflow automation',
         'Internal dashboards & portals',
@@ -24,6 +25,7 @@ const Services = () => {
       icon: Globe,
       title: t('services.2.title'),
       description: t('services.2.desc'),
+      bgColor: 'bg-[hsl(var(--service-websites))]',
       features: [
         'Corporate websites',
         'Multi-language support',
@@ -35,6 +37,7 @@ const Services = () => {
       icon: Boxes,
       title: t('services.3.title'),
       description: t('services.3.desc'),
+      bgColor: 'bg-[hsl(var(--service-saas))]',
       features: [
         'MVP development',
         'Product strategy',
@@ -46,6 +49,7 @@ const Services = () => {
       icon: TrendingUp,
       title: t('services.4.title'),
       description: t('services.4.desc'),
+      bgColor: 'bg-[hsl(var(--service-scaling))]',
       features: [
         'System audit',
         'Performance optimization',
@@ -91,7 +95,7 @@ const Services = () => {
                 key={index}
                 className="group p-8 lg:p-10 rounded-2xl border border-border bg-card hover:border-secondary/30 hover:shadow-premium transition-all duration-300"
               >
-                <div className="w-16 h-16 rounded-xl gradient-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className={`w-16 h-16 rounded-xl ${service.bgColor} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <service.icon className="h-8 w-8 text-white" />
                 </div>
                 <h2 className="text-2xl font-bold text-foreground mb-3">

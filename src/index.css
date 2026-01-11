@@ -45,6 +45,12 @@
     /* Light Background */
     --light-bg: 210 33% 96%;
 
+    /* Service Icon Colors - Solid, Premium, Muted */
+    --service-systems: 224 67% 33%;      /* Deep Blue #1E3A8A */
+    --service-websites: 270 65% 35%;     /* Royal Purple #4C1D95 */
+    --service-saas: 28 91% 38%;          /* Burnt Orange #B45309 */
+    --service-scaling: 162 89% 20%;      /* Emerald Green #065F46 */
+
     /* Text colors */
     --text-primary: 222 47% 11%;
     --text-secondary: 215 19% 35%;
