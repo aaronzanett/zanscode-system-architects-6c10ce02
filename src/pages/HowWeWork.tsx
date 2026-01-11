@@ -50,7 +50,7 @@ const HowWeWork = () => {
       />
 
       {/* Steps */}
-      <section className="section-padding bg-background">
+      <section className="section-padding-first bg-background">
         <div className="container-wide">
           <div className="max-w-4xl mx-auto space-y-8">
             {steps.map((step, index) => (

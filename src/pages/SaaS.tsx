@@ -38,7 +38,7 @@ const SaaS = () => {
       />
 
       {/* Vision */}
-      <section className="section-padding bg-background">
+      <section className="section-padding-first bg-background">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-6">
