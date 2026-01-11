@@ -389,6 +389,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   );
 }
 
+// Custom hook to access language context
 export function useLanguage() {
   const context = useContext(LanguageContext);
   if (context === undefined) {
