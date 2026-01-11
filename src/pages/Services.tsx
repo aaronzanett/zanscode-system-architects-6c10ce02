@@ -83,7 +83,7 @@ const Services = () => {
       />
 
       {/* Services Grid */}
-      <section className="section-padding bg-background">
+      <section className="section-padding-first bg-background">
         <div className="container-wide">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {services.map((service, index) => (

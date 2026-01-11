@@ -35,7 +35,7 @@ const About = () => {
       />
 
       {/* Philosophy */}
-      <section className="section-padding bg-background">
+      <section className="section-padding-first bg-background">
         <div className="container-wide">
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">

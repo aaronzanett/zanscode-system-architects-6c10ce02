@@ -158,6 +158,11 @@
     @apply py-20 md:py-28 lg:py-32;
   }
 
+  /* Reduced top padding for first section after PageHeader */
+  .section-padding-first {
+    @apply pt-10 md:pt-14 lg:pt-16 pb-20 md:pb-28 lg:pb-32;
+  }
+
   .container-narrow {
     @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
   }
