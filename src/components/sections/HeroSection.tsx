@@ -99,21 +99,6 @@ const CustomerAvatars = ({
   </div>
 );
 
-// Central connection hub
-const ConnectionHub = ({ className }: { className?: string }) => (
-  <div className={`relative ${className}`}>
-    {/* Central brand badge */}
-    <div className="relative z-10 bg-gradient-to-r from-secondary to-accent text-white text-xs font-semibold px-4 py-2 rounded-full shadow-lg">
-      Zanscode
-    </div>
-    {/* Connection dots */}
-    <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-secondary/60" />
-    <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-accent/60" />
-    <div className="absolute top-1/2 -left-3 -translate-y-1/2 w-2 h-2 rounded-full bg-secondary/60" />
-    <div className="absolute top-1/2 -right-3 -translate-y-1/2 w-2 h-2 rounded-full bg-accent/60" />
-  </div>
-);
-
 // Trust indicator component
 const TrustIndicator = ({ icon: Icon, text }: { icon: React.ElementType; text: string }) => (
   <div className="flex items-center gap-2.5 text-muted-foreground">
@@ -165,11 +150,6 @@ export function HeroSection() {
       
       <div className="absolute right-[5%] top-[42%] hidden lg:block animate-fade-in" style={{ animationDelay: '0.55s' }}>
         <TeamCard label={t('hero.team')} className="w-32" />
-      </div>
-
-      {/* Connection hub - bottom center-left */}
-      <div className="absolute left-[30%] bottom-[18%] hidden lg:block animate-fade-in" style={{ animationDelay: '0.65s' }}>
-        <ConnectionHub />
       </div>
 
       {/* Main centered content */}
