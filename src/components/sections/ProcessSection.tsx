@@ -19,30 +19,17 @@ export function ProcessSection() {
   return (
     <section 
       ref={sectionRef}
-      className="section-padding relative overflow-hidden"
-      style={{
-        background: 'linear-gradient(180deg, hsl(var(--muted) / 0.3) 0%, hsl(var(--background)) 50%, hsl(var(--muted) / 0.4) 100%)'
-      }}
+      className="section-padding bg-muted/50"
     >
-      {/* Subtle background accent */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-secondary/5 rounded-full blur-3xl" />
-      </div>
-
-      <div className="container-wide relative z-10">
-        <motion.div 
-          className="text-center max-w-2xl mx-auto mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-        >
+      <div className="container-wide">
+        <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
             {t('process.title')}
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             {t('process.subtitle')}
           </p>
-        </motion.div>
+        </div>
 
         <div className="relative">
           {/* Gradient connector line - desktop */}
