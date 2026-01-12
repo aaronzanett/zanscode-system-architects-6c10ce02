@@ -32,19 +32,6 @@ export function ProcessSection() {
         </div>
 
         <div className="relative">
-          {/* Gradient connector line - desktop */}
-          <div className="hidden md:block absolute top-6 left-0 right-0 h-0.5 overflow-hidden">
-            <motion.div 
-              className="h-full w-full"
-              style={{
-                background: 'linear-gradient(90deg, hsl(var(--muted-foreground) / 0.2) 0%, hsl(var(--secondary)) 50%, hsl(var(--muted-foreground) / 0.2) 100%)'
-              }}
-              initial={{ scaleX: 0, transformOrigin: 'left' }}
-              animate={isInView ? { scaleX: 1 } : {}}
-              transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
-            />
-          </div>
-
           <div className="space-y-8 md:space-y-0 md:grid md:grid-cols-6 gap-4">
             {steps.map((step, index) => (
               <motion.div
@@ -58,8 +45,21 @@ export function ProcessSection() {
                   ease: "easeOut"
                 }}
               >
+                {/* Desktop connector line to next step */}
+                {index < steps.length - 1 && (
+                  <motion.div 
+                    className="hidden md:block absolute top-6 left-1/2 w-full h-0.5 -translate-y-1/2"
+                    style={{
+                      background: 'hsl(var(--secondary))'
+                    }}
+                    initial={{ scaleX: 0, transformOrigin: 'left' }}
+                    animate={isInView ? { scaleX: 1 } : {}}
+                    transition={{ duration: 0.4, delay: 0.3 + index * 0.1, ease: "easeOut" }}
+                  />
+                )}
+
                 {/* Step circle */}
-                <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-white font-bold shadow-lg">
+                <div className="relative z-10 w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-white font-bold shadow-lg">
                   {index + 1}
                 </div>
 
