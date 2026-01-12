@@ -5,7 +5,7 @@ import { useRef } from 'react';
 export function ProcessSection() {
   const { t } = useLanguage();
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
+  const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
 
   const steps = [
     t('process.1'),
@@ -71,26 +71,12 @@ export function ProcessSection() {
                   ease: "easeOut"
                 }}
               >
-                {/* Step circle with depth and glow */}
-                <div className="relative">
-                  {/* Glow effect */}
-                  <div 
-                    className="absolute inset-0 rounded-full blur-md opacity-40"
-                    style={{
-                      background: 'hsl(var(--secondary))',
-                      transform: 'scale(1.3)'
-                    }}
-                  />
-                  {/* Circle with depth */}
-                  <div 
-                    className="relative w-12 h-12 rounded-full flex items-center justify-center text-white font-bold z-10"
-                    style={{
-                      background: 'linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--primary)) 100%)',
-                      boxShadow: '0 4px 14px -2px hsl(var(--secondary) / 0.4), inset 0 1px 0 hsl(var(--accent) / 0.3), inset 0 -2px 4px hsl(var(--primary) / 0.3)'
-                    }}
-                  >
-                    {index + 1}
-                  </div>
+                {/* Step circle */}
+                <div 
+                  className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold shadow-lg"
+                  style={{ backgroundColor: '#0A111E' }}
+                >
+                  {index + 1}
                 </div>
 
                 <div className="mt-4 text-center">
