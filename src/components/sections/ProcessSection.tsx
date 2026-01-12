@@ -5,7 +5,7 @@ import { useRef } from 'react';
 export function ProcessSection() {
   const { t } = useLanguage();
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
+  const isInView = useInView(sectionRef, { once: true, amount: 0.7 });
 
   const steps = [
     t('process.1'),
@@ -72,10 +72,7 @@ export function ProcessSection() {
                 }}
               >
                 {/* Step circle */}
-                <div 
-                  className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold shadow-lg"
-                  style={{ backgroundColor: '#0A111E' }}
-                >
+                <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-white font-bold shadow-lg">
                   {index + 1}
                 </div>
 
