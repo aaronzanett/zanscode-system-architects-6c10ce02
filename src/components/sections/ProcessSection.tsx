@@ -1,7 +1,11 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 export function ProcessSection() {
   const { t } = useLanguage();
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   const steps = [
     t('process.1'),
@@ -13,40 +17,101 @@ export function ProcessSection() {
   ];
 
   return (
-    <section className="section-padding bg-muted/50">
-      <div className="container-wide">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+    <section 
+      ref={sectionRef}
+      className="section-padding relative overflow-hidden"
+      style={{
+        background: 'linear-gradient(180deg, hsl(var(--muted) / 0.3) 0%, hsl(var(--background)) 50%, hsl(var(--muted) / 0.4) 100%)'
+      }}
+    >
+      {/* Subtle background accent */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-secondary/5 rounded-full blur-3xl" />
+      </div>
+
+      <div className="container-wide relative z-10">
+        <motion.div 
+          className="text-center max-w-2xl mx-auto mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
             {t('process.title')}
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             {t('process.subtitle')}
           </p>
-        </div>
+        </motion.div>
 
         <div className="relative">
-          {/* Timeline line */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-px h-full bg-gradient-to-b from-secondary/50 via-secondary/30 to-transparent" />
+          {/* Gradient connector line - desktop */}
+          <div className="hidden md:block absolute top-6 left-0 right-0 h-0.5 overflow-hidden">
+            <motion.div 
+              className="h-full w-full"
+              style={{
+                background: 'linear-gradient(90deg, hsl(var(--muted-foreground) / 0.2) 0%, hsl(var(--secondary)) 50%, hsl(var(--muted-foreground) / 0.2) 100%)'
+              }}
+              initial={{ scaleX: 0, transformOrigin: 'left' }}
+              animate={isInView ? { scaleX: 1 } : {}}
+              transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
+            />
+          </div>
 
           <div className="space-y-8 md:space-y-0 md:grid md:grid-cols-6 gap-4">
             {steps.map((step, index) => (
-              <div
+              <motion.div
                 key={index}
                 className="relative flex flex-col items-center"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ 
+                  duration: 0.5, 
+                  delay: 0.2 + index * 0.1,
+                  ease: "easeOut"
+                }}
               >
-                <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-white font-bold shadow-lg z-10">
-                  {index + 1}
+                {/* Step circle with depth and glow */}
+                <div className="relative">
+                  {/* Glow effect */}
+                  <div 
+                    className="absolute inset-0 rounded-full blur-md opacity-40"
+                    style={{
+                      background: 'hsl(var(--secondary))',
+                      transform: 'scale(1.3)'
+                    }}
+                  />
+                  {/* Circle with depth */}
+                  <div 
+                    className="relative w-12 h-12 rounded-full flex items-center justify-center text-white font-bold z-10"
+                    style={{
+                      background: 'linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--primary)) 100%)',
+                      boxShadow: '0 4px 14px -2px hsl(var(--secondary) / 0.4), inset 0 1px 0 hsl(var(--accent) / 0.3), inset 0 -2px 4px hsl(var(--primary) / 0.3)'
+                    }}
+                  >
+                    {index + 1}
+                  </div>
                 </div>
+
                 <div className="mt-4 text-center">
                   <span className="text-sm font-semibold text-foreground">
                     {step}
                   </span>
                 </div>
-                {/* Connector */}
+
+                {/* Mobile connector */}
                 {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-6 left-full w-full h-0.5 bg-gradient-to-r from-secondary/30 to-secondary/10" />
+                  <motion.div 
+                    className="md:hidden absolute -bottom-4 left-1/2 -translate-x-1/2 w-0.5 h-8"
+                    style={{
+                      background: 'linear-gradient(180deg, hsl(var(--secondary) / 0.5) 0%, hsl(var(--muted-foreground) / 0.2) 100%)'
+                    }}
+                    initial={{ scaleY: 0, transformOrigin: 'top' }}
+                    animate={isInView ? { scaleY: 1 } : {}}
+                    transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
+                  />
                 )}
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
