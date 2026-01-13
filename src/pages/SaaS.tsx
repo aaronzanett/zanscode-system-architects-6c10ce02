@@ -38,13 +38,13 @@ const SaaS = () => {
       />
 
       {/* Vision */}
-      <section className="section-padding-first bg-muted/50">
+      <section className="section-padding-first gradient-dark text-white">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-6">
               {t('saas.vision.title')}
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-lg text-slate-400 leading-relaxed">
               {t('saas.vision.desc')}
             </p>
           </div>

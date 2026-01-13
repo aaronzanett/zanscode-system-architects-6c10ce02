@@ -35,23 +35,23 @@ const About = () => {
       />
 
       {/* Philosophy */}
-      <section className="section-padding-first bg-muted/50">
+      <section className="section-padding-first gradient-dark text-white">
         <div className="container-wide">
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
               <div>
-                <h2 className="text-3xl font-bold text-foreground mb-6">
+                <h2 className="text-3xl font-bold mb-6">
                   {t('about.philosophy.title')}
                 </h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-lg text-slate-400 leading-relaxed">
                   {t('about.philosophy.desc')}
                 </p>
               </div>
               <div>
-                <h2 className="text-3xl font-bold text-foreground mb-6">
+                <h2 className="text-3xl font-bold mb-6">
                   {t('about.why.title')}
                 </h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-lg text-slate-400 leading-relaxed">
                   {t('about.why.desc')}
                 </p>
               </div>
