@@ -38,9 +38,9 @@ const SaaS = () => {
       />
 
       {/* Vision */}
-      <section className="section-padding gradient-dark text-white">
+      <section className="py-16 sm:py-20 gradient-dark text-white">
         <div className="container-wide">
-          <div className="max-w-3xl mx-auto text-center mb-16">
+          <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-6">
               {t('saas.vision.title')}
             </h2>
