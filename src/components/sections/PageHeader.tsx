@@ -169,19 +169,27 @@ const illustrations = {
 
 export function PageHeader({ title, subtitle, illustration = 'services' }: PageHeaderProps) {
   return (
-    <section className="relative pt-28 pb-8 gradient-dark text-white overflow-hidden">
-      {/* Subtle glow accents */}
-      <div className="absolute top-0 left-1/4 w-[400px] h-[300px] bg-gradient-radial from-secondary/10 via-secondary/3 to-transparent rounded-full blur-3xl" />
-      <div className="absolute top-1/3 right-0 w-[350px] h-[350px] bg-gradient-radial from-accent/8 via-accent/2 to-transparent rounded-full blur-3xl" />
+    <section className="relative pt-28 pb-8 bg-white overflow-hidden">
+      {/* Aurora-like gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-secondary/8 via-transparent to-accent/10" />
+      <div className="absolute inset-0 bg-gradient-to-tr from-accent/5 via-secondary/3 to-primary/8" />
+      
+      {/* Soft aurora blobs */}
+      <div className="absolute top-0 left-1/4 w-[400px] h-[300px] bg-gradient-radial from-secondary/12 via-secondary/5 to-transparent rounded-full blur-3xl" />
+      <div className="absolute top-1/3 right-0 w-[350px] h-[350px] bg-gradient-radial from-accent/15 via-accent/5 to-transparent rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-gradient-radial from-primary/8 via-secondary/4 to-transparent rounded-full blur-3xl" />
+      
+      {/* Bottom fade to blend with next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent via-white/50 to-background" />
       
       <div className="container-wide relative z-10">
         <div className="flex items-center justify-between gap-6">
           {/* Text content */}
           <div className="max-w-2xl flex-1">
-            <h1 className="text-4xl sm:text-5xl lg:text-5xl font-bold text-white tracking-tight animate-fade-up">
+            <h1 className="text-4xl sm:text-5xl lg:text-5xl font-bold text-foreground tracking-tight animate-fade-up">
               {title}
             </h1>
-            <p className="mt-4 text-lg text-slate-400 leading-relaxed animate-fade-up-delay-1">
+            <p className="mt-4 text-lg text-muted-foreground leading-relaxed animate-fade-up-delay-1">
               {subtitle}
             </p>
           </div>
