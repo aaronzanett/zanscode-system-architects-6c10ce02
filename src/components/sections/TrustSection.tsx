@@ -1,8 +1,23 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Layers, Target, Shield, Handshake } from 'lucide-react';
 
+const partners = [
+  { name: 'Microsoft', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg' },
+  { name: 'Alibaba Cloud', logo: 'https://img.alicdn.com/tfs/TB1Ly5oS3HqK1RjSZFPXXcwapXa-238-54.png' },
+  { name: 'Google Cloud', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg' },
+  { name: 'AWS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg' },
+  { name: 'Digital Ocean', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/digitalocean/digitalocean-original.svg' },
+  { name: 'Vercel', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg' },
+];
+
 export function TrustSection() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+
+  const partnerHeading = language === 'id' 
+    ? 'Dipercaya oleh tim dari perusahaan seperti'
+    : 'Trusted by teams from companies like';
+
+  const duplicatedPartners = [...partners, ...partners];
 
   const trustPoints = [
     {
@@ -28,7 +43,7 @@ export function TrustSection() {
   ];
 
   return (
-    <section className="section-padding bg-background">
+    <section className="section-padding bg-background overflow-hidden">
       <div className="container-wide">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
@@ -56,6 +71,34 @@ export function TrustSection() {
               </p>
             </div>
           ))}
+        </div>
+
+        {/* Partners */}
+        <div className="mt-16">
+          <p className="text-center text-sm text-muted-foreground mb-8 tracking-wide">
+            {partnerHeading}
+          </p>
+          
+          <div className="relative">
+            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+
+            <div className="flex animate-scroll-left">
+              {duplicatedPartners.map((partner, index) => (
+                <div
+                  key={`${partner.name}-${index}`}
+                  className="flex-shrink-0 flex items-center justify-center px-8 sm:px-12"
+                >
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="h-8 sm:h-10 w-auto grayscale opacity-40 hover:opacity-70 transition-opacity duration-300"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
