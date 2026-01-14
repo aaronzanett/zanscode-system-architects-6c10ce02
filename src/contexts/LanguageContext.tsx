@@ -85,7 +85,7 @@ const translations: Record<Language, Record<string, string>> = {
     'services.3.desc': 'Produk perangkat lunak skalabel untuk pasar atau penggunaan internal.',
     'services.4.title': 'Scaling & Improvement',
     'services.4.desc': 'Tingkatkan dan kembangkan sistem yang sudah ada.',
-
+    'services.viewMore': 'Lihat Selengkapnya',
     // Process
     'process.title': 'Proses Kami',
     'process.subtitle': 'Pendekatan terstruktur untuk hasil yang terukur.',
@@ -266,6 +266,7 @@ const translations: Record<Language, Record<string, string>> = {
     'services.3.desc': 'Scalable software products for market or internal use.',
     'services.4.title': 'Scaling & Improvement',
     'services.4.desc': 'Upgrade and scale your existing systems.',
+    'services.viewMore': 'View More',
 
     // Process
     'process.title': 'Our Process',
