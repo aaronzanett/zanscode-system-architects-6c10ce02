@@ -135,6 +135,10 @@ export default {
           "0%": { backgroundPosition: "0 0" },
           "100%": { backgroundPosition: "0 -60px" },
         },
+        "scroll-left": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -144,6 +148,7 @@ export default {
         "slide-in-right": "slide-in-right 0.5s ease-out forwards",
         "scale-in": "scale-in 0.3s ease-out forwards",
         "grid-scroll": "grid-scroll 3s linear infinite",
+        "scroll-left": "scroll-left 30s linear infinite",
       },
       spacing: {
         '18': '4.5rem',
