@@ -117,9 +117,9 @@ export function HeroSection() {
       {/* Subtle ambient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-white via-[#F8FAFC] to-[#F1F5F9]" />
       
-      {/* Very subtle grid pattern */}
+      {/* Very subtle grid pattern with upward scroll animation */}
       <div 
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 opacity-[0.03] animate-grid-scroll"
         style={{
           backgroundImage: `linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)`,
           backgroundSize: '60px 60px'
