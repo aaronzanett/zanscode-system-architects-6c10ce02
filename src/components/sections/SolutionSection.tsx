@@ -41,10 +41,6 @@ export function SolutionSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((item, index) => (
             <div key={index} className="relative group">
-              {/* Connector line */}
-              {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-8 left-full w-[calc(100%-2rem)] h-px bg-gradient-to-r from-secondary/50 to-transparent z-0" />
-              )}
               
               <div className="relative z-10 p-6 rounded-xl border border-slate-700/50 bg-slate-800/30 hover:bg-slate-800/50 hover:border-secondary/30 transition-all duration-300">
                 <span className="text-5xl font-bold text-secondary/20 group-hover:text-secondary/40 transition-colors">
