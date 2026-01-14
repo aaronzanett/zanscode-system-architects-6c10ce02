@@ -35,22 +35,13 @@ export function ServicesSection() {
   return (
     <section className="section-padding bg-background">
       <div className="container-wide">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16">
-          <div className="max-w-2xl">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
-              {t('services.title')}
-            </h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              {t('services.subtitle')}
-            </p>
-          </div>
-          <Link
-            to="/services"
-            className="mt-6 lg:mt-0 inline-flex items-center text-secondary hover:text-secondary/80 font-medium transition-colors"
-          >
-            {t('nav.services')}
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Link>
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
+            {t('services.title')}
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            {t('services.subtitle')}
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
@@ -70,6 +61,16 @@ export function ServicesSection() {
               </p>
             </div>
           ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <Link
+            to="/services"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-secondary text-secondary-foreground font-medium hover:bg-secondary/90 transition-colors"
+          >
+            {t('services.viewMore')}
+            <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>
