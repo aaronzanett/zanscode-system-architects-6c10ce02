@@ -105,7 +105,10 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.tagline': 'Mitra Solusi Sistem untuk Bisnis yang Berkembang',
     'footer.navigation': 'Navigasi',
     'footer.services': 'Layanan',
-    'footer.contact': 'Kontak',
+    'footer.legal': 'Legal & Dukungan',
+    'footer.privacy': 'Kebijakan Privasi',
+    'footer.terms': 'Syarat & Ketentuan',
+    'footer.getInTouch': 'Hubungi Kami',
     'footer.copyright': '© 2024 Zanscode. Semua hak dilindungi.',
 
     // Services Page
@@ -287,7 +290,10 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.tagline': 'System Solution Partner for Growing Businesses',
     'footer.navigation': 'Navigation',
     'footer.services': 'Services',
-    'footer.contact': 'Contact',
+    'footer.legal': 'Legal & Support',
+    'footer.privacy': 'Privacy Policy',
+    'footer.terms': 'Terms & Conditions',
+    'footer.getInTouch': 'Get in Touch',
     'footer.copyright': '© 2024 Zanscode. All rights reserved.',
 
     // Services Page
