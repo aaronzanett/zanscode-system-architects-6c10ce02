@@ -17,7 +17,7 @@ export function TrustSection() {
     ? 'Dipercaya oleh tim dari perusahaan seperti'
     : 'Trusted by teams from companies like';
 
-  const duplicatedPartners = [...partners, ...partners];
+  
 
   const trustPoints = [
     {
@@ -79,12 +79,12 @@ export function TrustSection() {
             {partnerHeading}
           </p>
           
-          <div className="relative">
-            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+          <div className="relative overflow-hidden">
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background via-background/80 to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background via-background/80 to-transparent z-10 pointer-events-none" />
 
-            <div className="flex animate-scroll-left">
-              {duplicatedPartners.map((partner, index) => (
+            <div className="flex w-max animate-scroll-left">
+              {[...partners, ...partners, ...partners, ...partners].map((partner, index) => (
                 <div
                   key={`${partner.name}-${index}`}
                   className="flex-shrink-0 flex items-center justify-center px-8 sm:px-12"
