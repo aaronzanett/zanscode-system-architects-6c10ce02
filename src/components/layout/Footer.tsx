@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Mail, MessageCircle, Instagram } from 'lucide-react';
 import logo from '@/assets/logo_web.png';
 
 export function Footer() {
@@ -19,10 +20,21 @@ export function Footer() {
     t('services.4.title'),
   ];
 
+  const legal = [
+    { path: '/privacy-policy', label: t('footer.privacy') },
+    { path: '/terms-conditions', label: t('footer.terms') },
+  ];
+
+  const contacts = [
+    { icon: Mail, label: 'hello@zanscode.com', href: 'mailto:hello@zanscode.com' },
+    { icon: MessageCircle, label: '+62 812 3456 7890', href: 'https://wa.me/6281234567890' },
+    { icon: Instagram, label: '@zanscode', href: 'https://instagram.com/zanscode' },
+  ];
+
   return (
     <footer className="gradient-dark text-primary-foreground">
       <div className="container-wide section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-4">
@@ -68,28 +80,44 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Legal & Support */}
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wide-premium text-slate-300 mb-4">
-              {t('footer.contact')}
+              {t('footer.legal')}
             </h4>
             <ul className="space-y-3">
-              <li>
-                <a
-                  href="mailto:hello@zanscode.com"
-                  className="text-sm text-slate-400 hover:text-white transition-colors"
-                >
-                  hello@zanscode.com
-                </a>
-              </li>
-              <li>
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center text-sm text-cyan-400 hover:text-cyan-300 transition-colors font-medium"
-                >
-                  {t('nav.cta')} →
-                </Link>
-              </li>
+              {legal.map((item) => (
+                <li key={item.path}>
+                  <Link
+                    to={item.path}
+                    className="text-sm text-slate-400 hover:text-white transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Get in Touch */}
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-wide-premium text-slate-300 mb-4">
+              {t('footer.getInTouch')}
+            </h4>
+            <ul className="space-y-3">
+              {contacts.map((contact, index) => (
+                <li key={index}>
+                  <a
+                    href={contact.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors"
+                  >
+                    <contact.icon className="w-4 h-4" />
+                    {contact.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
