@@ -29,7 +29,7 @@ const Login = () => {
         title: 'Login successful',
         description: 'Welcome back!',
       });
-      navigate('/');
+      navigate('/owner/partners');
     } else {
       toast({
         title: 'Login failed',
