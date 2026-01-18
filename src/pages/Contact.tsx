@@ -15,21 +15,39 @@ import {
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useToast } from '@/hooks/use-toast';
 import { Send, CheckCircle } from 'lucide-react';
+import type { ConsultationRequest } from '@/types/admin';
 
 const Contact = () => {
   const { t } = useLanguage();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    company: '',
+    industry: '',
+    problems: '',
+    goals: '',
+    budget: '',
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate submission
+    // Save to localStorage
+    const existingConsultations = JSON.parse(localStorage.getItem('admin_consultations') || '[]');
+    const newConsultation: ConsultationRequest = {
+      id: `${Date.now()}-${Math.random().toString(36).substring(2, 9)}`,
+      ...formData,
+      status: 'new',
+      createdAt: new Date().toISOString(),
+    };
+    localStorage.setItem('admin_consultations', JSON.stringify([...existingConsultations, newConsultation]));
+
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
+      setFormData({ company: '', industry: '', problems: '', goals: '', budget: '' });
       toast({
         title: 'Success!',
         description: 'Your consultation request has been submitted.',
@@ -94,6 +112,8 @@ const Contact = () => {
                       required
                       className="h-12"
                       placeholder="PT Example Indonesia"
+                      value={formData.company}
+                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                     />
                   </div>
                   <div className="space-y-2">
@@ -103,6 +123,8 @@ const Contact = () => {
                       required
                       className="h-12"
                       placeholder="e.g., Manufacturing, Healthcare"
+                      value={formData.industry}
+                      onChange={(e) => setFormData({ ...formData, industry: e.target.value })}
                     />
                   </div>
                 </div>
@@ -114,6 +136,8 @@ const Contact = () => {
                     required
                     className="min-h-32 resize-none"
                     placeholder={t('contact.form.problems.placeholder')}
+                    value={formData.problems}
+                    onChange={(e) => setFormData({ ...formData, problems: e.target.value })}
                   />
                 </div>
 
@@ -124,12 +148,14 @@ const Contact = () => {
                     required
                     className="min-h-32 resize-none"
                     placeholder={t('contact.form.goals.placeholder')}
+                    value={formData.goals}
+                    onChange={(e) => setFormData({ ...formData, goals: e.target.value })}
                   />
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="budget">{t('contact.form.budget')}</Label>
-                  <Select>
+                  <Select value={formData.budget} onValueChange={(value) => setFormData({ ...formData, budget: value })}>
                     <SelectTrigger className="h-12">
                       <SelectValue placeholder={t('contact.form.budget.select')} />
                     </SelectTrigger>
