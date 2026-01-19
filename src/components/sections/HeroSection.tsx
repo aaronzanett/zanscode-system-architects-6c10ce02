@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Shield, Layers, Headphones, Check, TrendingUp, Users } from 'lucide-react';
+import { Building2, Settings2, Handshake, Check, TrendingUp, Users, Shield } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 // Floating metric card component
@@ -200,9 +200,9 @@ export function HeroSection() {
 
           {/* Trust indicators - centered below CTA */}
           <div className="mt-12 flex flex-wrap gap-6 justify-center animate-fade-up" style={{ animationDelay: '0.3s' }}>
-            <TrustIndicator icon={Shield} text={t('hero.trust.enterprise')} />
-            <TrustIndicator icon={Layers} text={t('hero.trust.custom')} />
-            <TrustIndicator icon={Headphones} text={t('hero.trust.support')} />
+            <TrustIndicator icon={Building2} text={t('hero.trust.enterprise')} />
+            <TrustIndicator icon={Settings2} text={t('hero.trust.custom')} />
+            <TrustIndicator icon={Handshake} text={t('hero.trust.support')} />
           </div>
         </div>
       </div>
