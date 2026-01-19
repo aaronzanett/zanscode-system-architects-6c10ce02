@@ -30,9 +30,9 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.customers': 'Klien Kami',
     'hero.security': 'Keamanan Terjamin',
     'hero.team': 'Tim Anda',
-    'hero.trust.enterprise': 'Enterprise-ready',
-    'hero.trust.custom': 'Custom System',
-    'hero.trust.support': 'Long-term Support',
+    'hero.trust.enterprise': 'Enterprise-grade Architecture',
+    'hero.trust.custom': 'Tailored Business Systems',
+    'hero.trust.support': 'Long-term Technical Partnership',
 
     // Trust
     'trust.title': 'Dibangun untuk Bisnis yang Berkembang',
@@ -214,9 +214,9 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.customers': 'Our Clients',
     'hero.security': 'Secured Protection',
     'hero.team': 'Your Team',
-    'hero.trust.enterprise': 'Enterprise-ready',
-    'hero.trust.custom': 'Custom System',
-    'hero.trust.support': 'Long-term Support',
+    'hero.trust.enterprise': 'Enterprise-grade Architecture',
+    'hero.trust.custom': 'Tailored Business Systems',
+    'hero.trust.support': 'Long-term Technical Partnership',
 
     // Trust
     'trust.title': 'Built for Growing Businesses',
