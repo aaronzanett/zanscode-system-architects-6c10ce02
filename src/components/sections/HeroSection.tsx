@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Building2, Settings2, Handshake } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import heroVignette from '@/assets/hero-background-vignette.jpg';
 
 // Trust indicator component
 const TrustIndicator = ({ icon: Icon, text }: { icon: React.ElementType; text: string }) => (
@@ -18,8 +19,14 @@ export function HeroSection() {
   
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-[#F8FAFC]">
-      {/* Subtle ambient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-[#F8FAFC] to-[#F1F5F9]" />
+      {/* Vignette background image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
+        style={{ backgroundImage: `url(${heroVignette})` }}
+      />
+      
+      {/* Subtle overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-white/50" />
       
       {/* Very subtle grid pattern with upward scroll animation */}
       <div 
@@ -29,10 +36,6 @@ export function HeroSection() {
           backgroundSize: '60px 60px'
         }}
       />
-
-      {/* Soft ambient glows */}
-      <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-gradient-to-br from-secondary/5 via-secondary/3 to-transparent rounded-full blur-[100px]" />
-      <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] bg-gradient-to-br from-accent/4 via-accent/2 to-transparent rounded-full blur-[80px]" />
 
       {/* Main centered content */}
       <div className="container-wide relative z-10 pt-32 pb-24">
