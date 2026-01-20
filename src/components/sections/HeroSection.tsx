@@ -21,7 +21,7 @@ export function HeroSection() {
     <section className="relative min-h-screen flex items-center overflow-hidden bg-[#F8FAFC]">
       {/* Vignette background image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
         style={{ backgroundImage: `url(${heroVignette})` }}
       />
       
