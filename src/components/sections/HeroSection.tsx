@@ -1,16 +1,16 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Building2, Settings2, Handshake } from 'lucide-react';
+import { Building2, Settings2, Handshake, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import heroVignette from '@/assets/hero-background-vignette.jpg';
+import { motion } from 'framer-motion';
 
-// Trust indicator component
+// Trust indicator component with refined glass-morphism style
 const TrustIndicator = ({ icon: Icon, text }: { icon: React.ElementType; text: string }) => (
-  <div className="flex items-center gap-2.5 text-muted-foreground">
-    <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-secondary/12 to-secondary/6 flex items-center justify-center border border-secondary/10">
-      <Icon className="w-4 h-4 text-secondary" strokeWidth={1.8} />
+  <div className="flex items-center gap-3 px-4 py-2.5 rounded-full bg-white/60 backdrop-blur-sm border border-white/80 shadow-sm">
+    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-secondary to-accent flex items-center justify-center">
+      <Icon className="w-4 h-4 text-white" strokeWidth={2} />
     </div>
-    <span className="text-sm font-medium tracking-wide whitespace-nowrap">{text}</span>
+    <span className="text-sm font-medium text-foreground whitespace-nowrap">{text}</span>
   </div>
 );
 
@@ -18,56 +18,139 @@ export function HeroSection() {
   const { t } = useLanguage();
   
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#F8FAFC]">
-      {/* Vignette background image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
-        style={{ backgroundImage: `url(${heroVignette})` }}
-      />
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-[#f8fafc] via-[#f1f5f9] to-background">
+      {/* Animated gradient orbs */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Primary orb - blue */}
+        <motion.div
+          className="absolute w-[600px] h-[600px] rounded-full"
+          style={{
+            background: 'radial-gradient(circle, hsla(214, 82%, 51%, 0.15) 0%, transparent 70%)',
+            top: '10%',
+            left: '50%',
+            transform: 'translateX(-50%)',
+          }}
+          animate={{
+            scale: [1, 1.1, 1],
+            opacity: [0.6, 0.8, 0.6],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        
+        {/* Secondary orb - cyan */}
+        <motion.div
+          className="absolute w-[400px] h-[400px] rounded-full"
+          style={{
+            background: 'radial-gradient(circle, hsla(193, 100%, 68%, 0.12) 0%, transparent 70%)',
+            top: '30%',
+            right: '15%',
+          }}
+          animate={{
+            scale: [1, 1.15, 1],
+            x: [0, 30, 0],
+            y: [0, -20, 0],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        
+        {/* Tertiary orb - soft pink accent */}
+        <motion.div
+          className="absolute w-[350px] h-[350px] rounded-full"
+          style={{
+            background: 'radial-gradient(circle, hsla(330, 80%, 70%, 0.08) 0%, transparent 70%)',
+            bottom: '20%',
+            left: '10%',
+          }}
+          animate={{
+            scale: [1, 1.2, 1],
+            x: [0, -20, 0],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+      </div>
       
-      {/* Subtle overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-white/50" />
-      
-      {/* Very subtle grid pattern with upward scroll animation */}
+      {/* Subtle noise texture overlay */}
       <div 
-        className="absolute inset-0 opacity-[0.03] animate-grid-scroll"
+        className="absolute inset-0 opacity-[0.02]"
         style={{
-          backgroundImage: `linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)`,
-          backgroundSize: '60px 60px'
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
         }}
       />
 
-      {/* Main centered content */}
+      {/* Main content */}
       <div className="container-wide relative z-10 pt-32 pb-24">
-        <div className="max-w-3xl mx-auto text-center">
-          {/* Headline - large, editorial */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-[4rem] font-bold leading-[1.1] tracking-[-0.02em] text-foreground animate-fade-up">
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Small badge/label */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 mb-8"
+          >
+            <div className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+            <span className="text-sm font-medium text-secondary tracking-wide">System Solution Partner</span>
+          </motion.div>
+
+          {/* Headline - dramatic and editorial */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-[-0.03em] text-foreground"
+          >
             {t('hero.headline.part1')}
             <br />
-            <span 
-              className="relative bg-gradient-to-r from-secondary via-secondary/90 to-accent bg-clip-text text-transparent"
-              style={{
-                textShadow: '0 0 60px hsla(var(--secondary), 0.12)'
-              }}
-            >
-              {t('hero.headline.part2')}
+            <span className="relative inline-block mt-2">
+              <span className="bg-gradient-to-r from-secondary via-[hsl(200,90%,50%)] to-accent bg-clip-text text-transparent">
+                {t('hero.headline.part2')}
+              </span>
+              {/* Decorative underline */}
+              <motion.div
+                className="absolute -bottom-2 left-0 right-0 h-[3px] bg-gradient-to-r from-secondary via-accent to-transparent rounded-full"
+                initial={{ scaleX: 0, originX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              />
             </span>
-          </h1>
+          </motion.h1>
 
           {/* Supporting paragraph */}
-          <p className="mt-6 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto animate-fade-up" style={{ animationDelay: '0.1s' }}>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="mt-8 text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto"
+          >
             {t('hero.subtitle')}
-          </p>
+          </motion.p>
 
-          {/* CTA buttons - centered */}
-          <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center animate-fade-up" style={{ animationDelay: '0.2s' }}>
+          {/* CTA buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
+          >
             <Button
               asChild
               size="lg"
-              className="bg-secondary hover:bg-secondary/90 text-white text-sm px-7 py-6 rounded-full font-semibold shadow-[0_4px_20px_-4px_rgba(31,106,225,0.35)] hover:shadow-[0_8px_28px_-4px_rgba(31,106,225,0.45)] hover:-translate-y-0.5 transition-all duration-300"
+              className="group bg-gradient-to-r from-secondary to-[hsl(200,85%,45%)] hover:from-secondary/90 hover:to-[hsl(200,85%,40%)] text-white text-base px-8 py-6 rounded-full font-semibold shadow-[0_8px_30px_-6px_rgba(31,106,225,0.4)] hover:shadow-[0_12px_40px_-6px_rgba(31,106,225,0.5)] hover:-translate-y-1 transition-all duration-300"
             >
-              <Link to="/contact">
+              <Link to="/contact" className="flex items-center gap-2">
                 {t('hero.cta.primary')}
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
 
@@ -75,25 +158,30 @@ export function HeroSection() {
               asChild
               variant="outline"
               size="lg"
-              className="bg-white border border-border/60 text-foreground hover:bg-muted/30 hover:border-border hover:-translate-y-0.5 text-sm px-7 py-6 rounded-full font-medium transition-all duration-300"
+              className="bg-white/80 backdrop-blur-sm border-2 border-border/60 text-foreground hover:bg-white hover:border-secondary/30 hover:-translate-y-1 text-base px-8 py-6 rounded-full font-medium transition-all duration-300"
             >
               <Link to="/how-we-work">
                 {t('hero.cta.secondary')}
               </Link>
             </Button>
-          </div>
+          </motion.div>
 
-          {/* Trust indicators - centered below CTA */}
-          <div className="mt-12 flex flex-wrap lg:flex-nowrap gap-4 lg:gap-8 justify-center animate-fade-up" style={{ animationDelay: '0.3s' }}>
+          {/* Trust indicators */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="mt-16 flex flex-wrap lg:flex-nowrap gap-3 lg:gap-4 justify-center"
+          >
             <TrustIndicator icon={Building2} text={t('hero.trust.enterprise')} />
             <TrustIndicator icon={Settings2} text={t('hero.trust.custom')} />
             <TrustIndicator icon={Handshake} text={t('hero.trust.support')} />
-          </div>
+          </motion.div>
         </div>
       </div>
 
       {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background via-background/60 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background via-background/80 to-transparent" />
     </section>
   );
 }
