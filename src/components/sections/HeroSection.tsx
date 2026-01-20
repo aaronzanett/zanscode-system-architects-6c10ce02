@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import heroVideo from '@/assets/hero-video.mp4';
 
 export function HeroSection() {
   const { t } = useLanguage();
@@ -17,13 +18,13 @@ export function HeroSection() {
         className="absolute inset-0 w-full h-full object-cover"
       >
         <source 
-          src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4" 
+          src={heroVideo} 
           type="video/mp4" 
         />
       </video>
 
-      {/* Dark overlay for text legibility */}
-      <div className="absolute inset-0 bg-black/50" />
+      {/* Subtle overlay for text legibility on bright background */}
+      <div className="absolute inset-0 bg-black/30" />
 
       {/* Content */}
       <div className="relative z-10 container-wide text-center px-4">
@@ -66,7 +67,7 @@ export function HeroSection() {
       </div>
 
       {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
     </section>
   );
 }
