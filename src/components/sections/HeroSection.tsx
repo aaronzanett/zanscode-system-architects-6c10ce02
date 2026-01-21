@@ -1,37 +1,15 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import heroVideo from '@/assets/hero-video.mp4';
-import heroPoster from '@/assets/hero-video-poster.jpg';
-
 export function HeroSection() {
-  const { t } = useLanguage();
-  const [videoLoaded, setVideoLoaded] = useState(false);
-
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Thumbnail/Poster Background */}
-      <img
-        src={heroPoster}
-        alt=""
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
-          videoLoaded ? 'opacity-0' : 'opacity-100'
-        }`}
-      />
-
+  const {
+    t
+  } = useLanguage();
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Video Background */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        onCanPlayThrough={() => setVideoLoaded(true)}
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
-          videoLoaded ? 'opacity-100' : 'opacity-0'
-        }`}
-      >
+      <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
         <source src={heroVideo} type="video/mp4" />
       </video>
 
@@ -68,6 +46,8 @@ export function HeroSection() {
           </Button>
         </div>
       </div>
-    </section>
-  );
+
+      {/* Bottom gradient fade */}
+      
+    </section>;
 }
