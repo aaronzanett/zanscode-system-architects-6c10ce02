@@ -18,8 +18,8 @@
     --primary: 217 78% 20%;
     --primary-foreground: 210 40% 98%;
 
-    /* Bright Blue Secondary */
-    --secondary: 214 82% 51%;
+    /* Deep Blue Secondary */
+    --secondary: 214 82% 42%;
     --secondary-foreground: 0 0% 100%;
 
     /* Cyan Blue Accent */
@@ -79,7 +79,7 @@
     --primary: 210 40% 98%;
     --primary-foreground: 217 78% 20%;
 
-    --secondary: 214 82% 51%;
+    --secondary: 214 82% 42%;
     --secondary-foreground: 0 0% 100%;
 
     --accent: 193 100% 68%;
