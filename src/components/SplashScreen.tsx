@@ -12,7 +12,7 @@ export function SplashScreen({ onComplete }: SplashScreenProps) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false);
-    }, 1500);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -29,7 +29,7 @@ export function SplashScreen({ onComplete }: SplashScreenProps) {
         <motion.div
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.6, ease: 'easeInOut' }}
+          transition={{ duration: 0.4, ease: 'easeInOut' }}
           className="fixed inset-0 z-[9999] gradient-dark flex items-center justify-center"
         >
           <motion.div
