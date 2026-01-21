@@ -3,24 +3,14 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import heroVideo from '@/assets/hero-video.mp4';
-
 export function HeroSection() {
-  const { t } = useLanguage();
-  
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  const {
+    t
+  } = useLanguage();
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Video Background */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source 
-          src={heroVideo} 
-          type="video/mp4" 
-        />
+      <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
+        <source src={heroVideo} type="video/mp4" />
       </video>
 
       {/* Subtle overlay for text legibility on bright background */}
@@ -42,23 +32,14 @@ export function HeroSection() {
 
         {/* CTA buttons */}
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-          <Button
-            asChild
-            size="lg"
-            className="group bg-secondary hover:bg-secondary/90 text-white text-base px-8 py-6 rounded-full font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
-          >
+          <Button asChild size="lg" className="group bg-secondary hover:bg-secondary/90 text-white text-base px-8 py-6 rounded-full font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200">
             <Link to="/contact" className="flex items-center gap-2">
               {t('hero.cta.primary')}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
             </Link>
           </Button>
 
-          <Button
-            asChild
-            variant="outline"
-            size="lg"
-            className="border-white/30 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 hover:border-white/50 text-base px-8 py-6 rounded-full font-medium transition-all duration-200"
-          >
+          <Button asChild variant="outline" size="lg" className="border-white/30 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 hover:border-white/50 text-base px-8 py-6 rounded-full font-medium transition-all duration-200">
             <Link to="/how-we-work">
               {t('hero.cta.secondary')}
             </Link>
@@ -67,7 +48,6 @@ export function HeroSection() {
       </div>
 
       {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
-    </section>
-  );
+      
+    </section>;
 }
