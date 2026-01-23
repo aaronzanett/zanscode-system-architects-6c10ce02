@@ -26,6 +26,7 @@ export function Navbar() {
     { path: '/how-we-work', label: t('nav.howWeWork') },
     { path: '/about', label: t('nav.about') },
     { path: '/saas', label: t('nav.saas') },
+    { path: '/career', label: t('nav.career') },
     { path: '/contact', label: t('nav.contact') },
   ];
 
