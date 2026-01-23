@@ -114,7 +114,7 @@ const Career = () => {
 
                   <Button
                     asChild
-                    className="w-full sm:w-auto bg-secondary hover:brightness-90 text-white"
+                    className="w-full sm:w-auto bg-secondary hover:bg-secondary hover:brightness-90 text-white hover:text-white transition-all duration-300"
                   >
                     <Link to="/contact">
                       {t('career.apply')}
@@ -140,7 +140,7 @@ const Career = () => {
           <Button
             asChild
             size="lg"
-            className="mt-8 bg-secondary hover:brightness-90 text-white text-base px-8 py-6 rounded-lg font-semibold"
+            className="mt-8 bg-secondary hover:bg-secondary hover:brightness-90 text-white hover:text-white text-base px-8 py-6 rounded-lg font-semibold transition-all duration-300"
           >
             <Link to="/contact">
               {t('career.cta.button')}

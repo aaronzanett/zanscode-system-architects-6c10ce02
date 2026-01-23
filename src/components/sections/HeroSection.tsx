@@ -32,7 +32,7 @@ export function HeroSection() {
 
         {/* CTA buttons */}
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-          <Button asChild size="lg" className="group bg-secondary hover:bg-secondary hover:brightness-90 text-white text-base px-8 py-6 rounded-full font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200">
+          <Button asChild size="lg" className="group bg-secondary hover:bg-secondary hover:brightness-90 text-white hover:text-white text-base px-8 py-6 rounded-full font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
             <Link to="/contact" className="flex items-center gap-2">
               {t('hero.cta.primary')}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />

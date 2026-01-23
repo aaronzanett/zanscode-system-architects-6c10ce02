@@ -66,7 +66,7 @@ export function ServicesSection() {
         <div className="mt-12 text-center">
           <Link
             to="/services"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-secondary text-secondary-foreground font-medium hover:bg-secondary hover:brightness-90 transition-colors"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-secondary text-white hover:text-white font-medium hover:bg-secondary hover:brightness-90 transition-all duration-300"
           >
             {t('services.viewMore')}
             <ArrowRight className="h-4 w-4" />
