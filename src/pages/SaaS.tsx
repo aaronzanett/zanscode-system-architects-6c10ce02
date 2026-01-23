@@ -96,7 +96,7 @@ const SaaS = () => {
           <Button
             asChild
             size="lg"
-            className="mt-8 bg-secondary hover:bg-secondary hover:brightness-90 text-white hover:text-white text-base px-8 py-6 rounded-lg font-semibold transition-all duration-300"
+            className="mt-8 bg-secondary hover:bg-secondary-hover text-white hover:text-white text-base px-8 py-6 rounded-lg font-semibold transition-all duration-300"
           >
             <Link to="/contact">
               {t('cta.button')}

@@ -20,6 +20,7 @@
 
     /* Bright Blue Secondary */
     --secondary: 214 82% 51%;
+    --secondary-hover: 214 82% 43%;
     --secondary-foreground: 0 0% 100%;
 
     /* Cyan Blue Accent */
