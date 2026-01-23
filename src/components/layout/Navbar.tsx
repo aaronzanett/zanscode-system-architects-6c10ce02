@@ -76,7 +76,7 @@ export function Navbar() {
             <Globe className="h-4 w-4" />
             {language.toUpperCase()}
           </button>
-          <Button asChild variant="default" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground">
+          <Button asChild variant="default" className="bg-secondary hover:bg-secondary hover:brightness-90 text-secondary-foreground">
             <Link to="/contact">{t('nav.cta')}</Link>
           </Button>
         </div>
@@ -118,7 +118,7 @@ export function Navbar() {
                 {language === 'id' ? 'Bahasa Indonesia' : 'English'}
               </button>
             </div>
-            <Button asChild variant="default" className="mt-2 bg-secondary hover:bg-secondary/90">
+            <Button asChild variant="default" className="mt-2 bg-secondary hover:bg-secondary hover:brightness-90">
               <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                 {t('nav.cta')}
               </Link>
