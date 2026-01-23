@@ -11,6 +11,7 @@ import Services from "./pages/Services";
 import HowWeWork from "./pages/HowWeWork";
 import About from "./pages/About";
 import SaaS from "./pages/SaaS";
+import Career from "./pages/Career";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
@@ -61,6 +62,7 @@ const App = () => {
               <Route path="/how-we-work" element={<HowWeWork />} />
               <Route path="/about" element={<About />} />
               <Route path="/saas" element={<SaaS />} />
+              <Route path="/career" element={<Career />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-conditions" element={<TermsConditions />} />
