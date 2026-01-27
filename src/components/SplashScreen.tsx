@@ -56,30 +56,15 @@ export function SplashScreen({ onComplete }: SplashScreenProps) {
               }}
             />
             
-            {/* Subtle loading indicator */}
-            <motion.div
-              className="mt-8 flex gap-1.5"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.8, duration: 0.4 }}
+            {/* Tagline */}
+            <motion.p
+              className="mt-6 text-white/70 text-sm md:text-base tracking-widest uppercase font-light"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.5, ease: 'easeOut' }}
             >
-              {[0, 1, 2].map((i) => (
-                <motion.div
-                  key={i}
-                  className="w-1.5 h-1.5 rounded-full bg-white/40"
-                  animate={{
-                    opacity: [0.4, 1, 0.4],
-                    scale: [1, 1.2, 1],
-                  }}
-                  transition={{
-                    duration: 1,
-                    repeat: Infinity,
-                    delay: i * 0.2,
-                    ease: 'easeInOut',
-                  }}
-                />
-              ))}
-            </motion.div>
+              Defined by Excellence.
+            </motion.p>
           </motion.div>
         </motion.div>
       )}
