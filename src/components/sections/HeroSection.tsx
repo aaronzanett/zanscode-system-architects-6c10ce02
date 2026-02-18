@@ -2,38 +2,51 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Building2, GitBranch, Shield } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { motion } from 'framer-motion';
 
 export function HeroSection() {
   const { t } = useLanguage();
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-background">
-      {/* Subtle grid pattern */}
-      <div
-        className="absolute inset-0 opacity-[0.035]"
-        style={{
-          backgroundImage: `
-            linear-gradient(hsl(var(--primary)) 1px, transparent 1px),
-            linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)
-          `,
-          backgroundSize: '60px 60px',
-        }}
-      />
-
-      {/* Gradient blobs */}
+      {/* Animated gradient blobs */}
       {/* Left blob - blue/indigo */}
-      <div
-        className="absolute -left-32 top-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full opacity-30 blur-[100px] pointer-events-none"
+      <motion.div
+        className="absolute -left-40 top-1/2 w-[600px] h-[600px] rounded-full opacity-30 blur-[120px] pointer-events-none"
         style={{
           background: 'radial-gradient(circle, hsl(240 80% 70%), hsl(var(--secondary)) 60%, transparent 80%)',
         }}
+        animate={{
+          x: [0, 60, 20, -20, 0],
+          y: [0, -40, 30, -20, 0],
+          scale: [1, 1.1, 0.95, 1.05, 1],
+        }}
+        transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
       />
       {/* Right blob - pink/rose */}
-      <div
-        className="absolute -right-32 top-1/3 w-[420px] h-[420px] rounded-full opacity-20 blur-[100px] pointer-events-none"
+      <motion.div
+        className="absolute -right-40 top-1/4 w-[500px] h-[500px] rounded-full opacity-25 blur-[110px] pointer-events-none"
         style={{
           background: 'radial-gradient(circle, hsl(320 70% 80%), hsl(280 60% 75%) 60%, transparent 80%)',
         }}
+        animate={{
+          x: [0, -50, 20, 40, 0],
+          y: [0, 50, -30, 20, 0],
+          scale: [1, 0.9, 1.1, 0.95, 1],
+        }}
+        transition={{ duration: 22, repeat: Infinity, ease: 'easeInOut', delay: 3 }}
+      />
+      {/* Center accent blob - cyan */}
+      <motion.div
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[300px] rounded-full opacity-10 blur-[90px] pointer-events-none"
+        style={{
+          background: 'radial-gradient(circle, hsl(var(--accent)), transparent 70%)',
+        }}
+        animate={{
+          scale: [1, 1.3, 0.8, 1.15, 1],
+          rotate: [0, 20, -15, 10, 0],
+        }}
+        transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut', delay: 6 }}
       />
 
       {/* Content */}
