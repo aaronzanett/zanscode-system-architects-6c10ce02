@@ -12,7 +12,7 @@ export function HeroSection() {
       {/* Animated gradient blobs */}
       {/* Left blob - blue/indigo */}
       <motion.div
-        className="absolute -left-20 top-1/3 w-[700px] h-[700px] rounded-full opacity-50 blur-[80px] pointer-events-none"
+        className="absolute -left-20 top-1/3 w-[700px] h-[700px] rounded-full opacity-30 blur-[100px] pointer-events-none"
         style={{
           background: 'radial-gradient(circle, hsl(240 80% 70%), hsl(var(--secondary)) 60%, transparent 80%)',
         }}
@@ -25,7 +25,7 @@ export function HeroSection() {
       />
       {/* Right blob - pink/rose */}
       <motion.div
-        className="absolute -right-20 top-1/4 w-[600px] h-[600px] rounded-full opacity-45 blur-[80px] pointer-events-none"
+        className="absolute -right-20 top-1/4 w-[600px] h-[600px] rounded-full opacity-25 blur-[100px] pointer-events-none"
         style={{
           background: 'radial-gradient(circle, hsl(320 70% 75%), hsl(280 60% 70%) 60%, transparent 80%)',
         }}
@@ -38,7 +38,7 @@ export function HeroSection() {
       />
       {/* Center accent blob - cyan */}
       <motion.div
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[400px] rounded-full opacity-25 blur-[70px] pointer-events-none"
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[400px] rounded-full opacity-15 blur-[90px] pointer-events-none"
         style={{
           background: 'radial-gradient(circle, hsl(var(--accent)), hsl(var(--secondary)) 50%, transparent 75%)',
         }}
