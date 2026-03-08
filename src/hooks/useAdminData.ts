@@ -64,6 +64,10 @@ export function useConsultations() {
   return useLocalStorage<ConsultationRequest[]>(STORAGE_KEYS.consultations, []);
 }
 
+export function useTeamMembers() {
+  return useLocalStorage<TeamMember[]>(STORAGE_KEYS.team, []);
+}
+
 export function generateId(): string {
   return `${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
 }
