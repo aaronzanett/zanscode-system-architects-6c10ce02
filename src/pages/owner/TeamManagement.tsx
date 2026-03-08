@@ -165,7 +165,7 @@ export default function TeamManagement() {
               )}
             </TableBody>
           </Table>
-          <TablePagination currentPage={currentPage} totalPages={totalPages} totalItems={filtered.length} onPageChange={setCurrentPage} />
+          <TablePagination currentPage={currentPage} totalPages={totalPages} totalItems={filtered.length} onPageChange={goToPage} />
         </CardContent>
       </Card>
     </AdminLayout>
