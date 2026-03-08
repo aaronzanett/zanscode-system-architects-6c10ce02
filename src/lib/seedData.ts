@@ -1,4 +1,4 @@
-import type { Partner, Service, SaaSProduct, ConsultationRequest } from '@/types/admin';
+import type { Partner, Service, SaaSProduct, ConsultationRequest, TeamMember } from '@/types/admin';
 
 export const SEED_PARTNERS: Partner[] = [
   { id: 'p1', name: 'TechVenture Indonesia', logo: '', website: 'https://techventure.id', createdAt: '2025-01-15T08:00:00Z' },

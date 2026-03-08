@@ -50,3 +50,15 @@ export interface ConsultationRequest {
   status: 'new' | 'in-progress' | 'completed' | 'archived';
   createdAt: string;
 }
+
+export interface TeamMember {
+  id: string;
+  name: string;
+  email: string;
+  role: 'owner' | 'manager' | 'developer' | 'designer' | 'marketing' | 'finance';
+  department: string;
+  phone: string;
+  avatar?: string;
+  status: 'active' | 'on-leave' | 'inactive';
+  joinedAt: string;
+}

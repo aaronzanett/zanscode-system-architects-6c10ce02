@@ -5,7 +5,8 @@ import type {
   AboutContent, 
   SaaSProduct, 
   ContactInfo, 
-  ConsultationRequest 
+  ConsultationRequest,
+  TeamMember 
 } from '@/types/admin';
 
 const STORAGE_KEYS = {
