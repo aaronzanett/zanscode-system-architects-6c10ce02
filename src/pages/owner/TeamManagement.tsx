@@ -42,7 +42,7 @@ export default function TeamManagement() {
     });
   }, [team, search, roleFilter, statusFilter]);
 
-  const { currentPage, totalPages, paginatedItems, setCurrentPage } = usePagination(filtered, 6);
+  const { currentPage, totalPages, paginatedItems, goToPage } = usePagination(filtered, { pageSize: 6 });
 
   const openAdd = () => { setForm(emptyForm); setEditingId(null); setDialogOpen(true); };
   const openEdit = (m: TeamMember) => {
