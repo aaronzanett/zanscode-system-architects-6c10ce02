@@ -20,12 +20,14 @@ import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
 // Owner Pages
+import Dashboard from "./pages/owner/Dashboard";
 import Partners from "./pages/owner/Partners";
 import ServicesManagement from "./pages/owner/Services";
 import AboutManagement from "./pages/owner/AboutManagement";
 import SaaSManagement from "./pages/owner/SaaSManagement";
 import ContactInfoManagement from "./pages/owner/ContactInfoManagement";
 import Consultations from "./pages/owner/Consultations";
+import TeamManagement from "./pages/owner/TeamManagement";
 
 const queryClient = new QueryClient();
 
