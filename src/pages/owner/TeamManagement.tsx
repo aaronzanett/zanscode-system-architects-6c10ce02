@@ -125,7 +125,7 @@ export default function TeamManagement() {
                 {ROLES.map((r) => <SelectItem key={r} value={r}>{r}</SelectItem>)}
               </SelectContent>
             </Select>
-            <Select value={statusFilter} onValueChange={(v) => { setStatusFilter(v); setCurrentPage(1); }}>
+            <Select value={statusFilter} onValueChange={(v) => { setStatusFilter(v); goToPage(1); }}>
               <SelectTrigger className="w-[150px]"><SelectValue placeholder="Status" /></SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">All Status</SelectItem>
