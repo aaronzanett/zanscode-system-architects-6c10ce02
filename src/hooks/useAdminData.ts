@@ -5,7 +5,8 @@ import type {
   AboutContent, 
   SaaSProduct, 
   ContactInfo, 
-  ConsultationRequest 
+  ConsultationRequest,
+  TeamMember 
 } from '@/types/admin';
 
 const STORAGE_KEYS = {
@@ -15,6 +16,7 @@ const STORAGE_KEYS = {
   saas: 'admin_saas',
   contactInfo: 'admin_contact_info',
   consultations: 'admin_consultations',
+  team: 'admin_team',
 };
 
 function useLocalStorage<T>(key: string, initialValue: T): [T, (value: T | ((prev: T) => T)) => void] {
@@ -60,6 +62,10 @@ export function useContactInfo() {
 
 export function useConsultations() {
   return useLocalStorage<ConsultationRequest[]>(STORAGE_KEYS.consultations, []);
+}
+
+export function useTeamMembers() {
+  return useLocalStorage<TeamMember[]>(STORAGE_KEYS.team, []);
 }
 
 export function generateId(): string {

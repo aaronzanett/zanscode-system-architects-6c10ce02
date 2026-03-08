@@ -1,4 +1,4 @@
-import type { Partner, Service, SaaSProduct, ConsultationRequest } from '@/types/admin';
+import type { Partner, Service, SaaSProduct, ConsultationRequest, TeamMember } from '@/types/admin';
 
 export const SEED_PARTNERS: Partner[] = [
   { id: 'p1', name: 'TechVenture Indonesia', logo: '', website: 'https://techventure.id', createdAt: '2025-01-15T08:00:00Z' },
@@ -50,4 +50,17 @@ export const SEED_CONSULTATIONS: ConsultationRequest[] = [
   { id: 'c8', company: 'Media Kreatif Co', industry: 'Media', problems: 'Content management scattered across tools', goals: 'Unified CMS with workflow automation', budget: '$10,000 - $20,000', status: 'in-progress', createdAt: '2026-03-01T08:00:00Z' },
   { id: 'c9', company: 'Warung Nusantara', industry: 'F&B', problems: 'No POS or inventory system', goals: 'Cloud POS with multi-branch support', budget: '$10,000 - $20,000', status: 'new', createdAt: '2026-03-05T08:00:00Z' },
   { id: 'c10', company: 'GovTech Solutions', industry: 'Government', problems: 'Slow public service delivery', goals: 'Digitize citizen services portal', budget: '$100,000+', status: 'new', createdAt: '2026-03-08T08:00:00Z' },
+];
+
+export const SEED_TEAM: TeamMember[] = [
+  { id: 't1', name: 'Andi Prasetyo', email: 'andi@zanscode.com', role: 'owner', department: 'Executive', phone: '+62 812-3456-7890', status: 'active', joinedAt: '2024-01-01T08:00:00Z' },
+  { id: 't2', name: 'Siti Rahayu', email: 'siti@zanscode.com', role: 'manager', department: 'Operations', phone: '+62 813-4567-8901', status: 'active', joinedAt: '2024-03-15T08:00:00Z' },
+  { id: 't3', name: 'Budi Santoso', email: 'budi@zanscode.com', role: 'developer', department: 'Engineering', phone: '+62 814-5678-9012', status: 'active', joinedAt: '2024-04-01T08:00:00Z' },
+  { id: 't4', name: 'Maya Putri', email: 'maya@zanscode.com', role: 'designer', department: 'Design', phone: '+62 815-6789-0123', status: 'active', joinedAt: '2024-05-10T08:00:00Z' },
+  { id: 't5', name: 'Rizky Firmansyah', email: 'rizky@zanscode.com', role: 'developer', department: 'Engineering', phone: '+62 816-7890-1234', status: 'active', joinedAt: '2024-06-20T08:00:00Z' },
+  { id: 't6', name: 'Dewi Lestari', email: 'dewi@zanscode.com', role: 'marketing', department: 'Marketing', phone: '+62 817-8901-2345', status: 'on-leave', joinedAt: '2024-07-01T08:00:00Z' },
+  { id: 't7', name: 'Fajar Nugroho', email: 'fajar@zanscode.com', role: 'developer', department: 'Engineering', phone: '+62 818-9012-3456', status: 'active', joinedAt: '2024-08-15T08:00:00Z' },
+  { id: 't8', name: 'Lina Marlina', email: 'lina@zanscode.com', role: 'finance', department: 'Finance', phone: '+62 819-0123-4567', status: 'active', joinedAt: '2024-09-01T08:00:00Z' },
+  { id: 't9', name: 'Hendra Wijaya', email: 'hendra@zanscode.com', role: 'developer', department: 'Engineering', phone: '+62 821-1234-5678', status: 'inactive', joinedAt: '2024-10-10T08:00:00Z' },
+  { id: 't10', name: 'Ratna Sari', email: 'ratna@zanscode.com', role: 'designer', department: 'Design', phone: '+62 822-2345-6789', status: 'active', joinedAt: '2025-01-05T08:00:00Z' },
 ];

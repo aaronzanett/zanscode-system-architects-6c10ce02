@@ -20,11 +20,15 @@ import {
   Mail, 
   MessageSquare,
   LogOut,
-  Home
+  Home,
+  LayoutDashboard,
+  UserCog
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const menuItems = [
+  { title: 'Dashboard', url: '/owner/dashboard', icon: LayoutDashboard },
+  { title: 'Team', url: '/owner/team', icon: UserCog },
   { title: 'Partners', url: '/owner/partners', icon: Users },
   { title: 'Services', url: '/owner/services', icon: Briefcase },
   { title: 'About Page', url: '/owner/about', icon: FileText },
