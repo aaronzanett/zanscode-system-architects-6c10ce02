@@ -71,6 +71,8 @@ const App = () => {
               <Route path="/login" element={<Login />} />
               
               {/* Owner Routes */}
+              <Route path="/owner/dashboard" element={<Dashboard />} />
+              <Route path="/owner/team" element={<TeamManagement />} />
               <Route path="/owner/partners" element={<Partners />} />
               <Route path="/owner/services" element={<ServicesManagement />} />
               <Route path="/owner/about" element={<AboutManagement />} />
