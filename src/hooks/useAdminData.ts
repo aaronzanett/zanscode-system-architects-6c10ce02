@@ -6,7 +6,13 @@ import type {
   SaaSProduct, 
   ContactInfo, 
   ConsultationRequest,
-  TeamMember 
+  TeamMember,
+  Project,
+  ProjectTask,
+  Client,
+  FinanceRecord,
+  ProductFeature,
+  Document 
 } from '@/types/admin';
 
 const STORAGE_KEYS = {
@@ -17,6 +23,12 @@ const STORAGE_KEYS = {
   contactInfo: 'admin_contact_info',
   consultations: 'admin_consultations',
   team: 'admin_team',
+  projects: 'admin_projects',
+  tasks: 'admin_tasks',
+  clients: 'admin_clients',
+  finance: 'admin_finance',
+  productFeatures: 'admin_product_features',
+  documents: 'admin_documents',
 };
 
 function useLocalStorage<T>(key: string, initialValue: T): [T, (value: T | ((prev: T) => T)) => void] {
@@ -66,6 +78,30 @@ export function useConsultations() {
 
 export function useTeamMembers() {
   return useLocalStorage<TeamMember[]>(STORAGE_KEYS.team, []);
+}
+
+export function useProjects() {
+  return useLocalStorage<Project[]>(STORAGE_KEYS.projects, []);
+}
+
+export function useProjectTasks() {
+  return useLocalStorage<ProjectTask[]>(STORAGE_KEYS.tasks, []);
+}
+
+export function useClients() {
+  return useLocalStorage<Client[]>(STORAGE_KEYS.clients, []);
+}
+
+export function useFinance() {
+  return useLocalStorage<FinanceRecord[]>(STORAGE_KEYS.finance, []);
+}
+
+export function useProductFeatures() {
+  return useLocalStorage<ProductFeature[]>(STORAGE_KEYS.productFeatures, []);
+}
+
+export function useDocuments() {
+  return useLocalStorage<Document[]>(STORAGE_KEYS.documents, []);
 }
 
 export function generateId(): string {

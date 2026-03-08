@@ -1,4 +1,4 @@
-import type { Partner, Service, SaaSProduct, ConsultationRequest, TeamMember } from '@/types/admin';
+import type { Partner, Service, SaaSProduct, ConsultationRequest, TeamMember, Project, ProjectTask, Client, FinanceRecord, ProductFeature, Document } from '@/types/admin';
 
 export const SEED_PARTNERS: Partner[] = [
   { id: 'p1', name: 'TechVenture Indonesia', logo: '', website: 'https://techventure.id', createdAt: '2025-01-15T08:00:00Z' },
@@ -63,4 +63,82 @@ export const SEED_TEAM: TeamMember[] = [
   { id: 't8', name: 'Lina Marlina', email: 'lina@zanscode.com', role: 'finance', department: 'Finance', phone: '+62 819-0123-4567', status: 'active', joinedAt: '2024-09-01T08:00:00Z' },
   { id: 't9', name: 'Hendra Wijaya', email: 'hendra@zanscode.com', role: 'developer', department: 'Engineering', phone: '+62 821-1234-5678', status: 'inactive', joinedAt: '2024-10-10T08:00:00Z' },
   { id: 't10', name: 'Ratna Sari', email: 'ratna@zanscode.com', role: 'designer', department: 'Design', phone: '+62 822-2345-6789', status: 'active', joinedAt: '2025-01-05T08:00:00Z' },
+];
+
+export const SEED_PROJECTS: Project[] = [
+  { id: 'pr1', title: 'E-Commerce Platform Redesign', description: 'Complete overhaul of the storefront UI/UX', assignee: 'Budi Santoso', status: 'in-progress', priority: 'high', deadline: '2026-04-15', createdAt: '2026-01-05T08:00:00Z' },
+  { id: 'pr2', title: 'Mobile App v2.0', description: 'New features and performance improvements for mobile', assignee: 'Rizky Firmansyah', status: 'in-progress', priority: 'urgent', deadline: '2026-03-30', createdAt: '2026-01-10T08:00:00Z' },
+  { id: 'pr3', title: 'Client Portal Development', description: 'Self-service portal for clients to track projects', assignee: 'Fajar Nugroho', status: 'backlog', priority: 'medium', deadline: '2026-05-20', createdAt: '2026-01-20T08:00:00Z' },
+  { id: 'pr4', title: 'Internal Dashboard Analytics', description: 'Real-time analytics dashboard for internal metrics', assignee: 'Budi Santoso', status: 'review', priority: 'high', deadline: '2026-03-15', createdAt: '2026-02-01T08:00:00Z' },
+  { id: 'pr5', title: 'API Gateway Migration', description: 'Migrate legacy APIs to new gateway architecture', assignee: 'Rizky Firmansyah', status: 'backlog', priority: 'medium', deadline: '2026-06-01', createdAt: '2026-02-10T08:00:00Z' },
+  { id: 'pr6', title: 'Marketing Website Refresh', description: 'Update landing pages with new branding', assignee: 'Maya Putri', status: 'completed', priority: 'low', deadline: '2026-02-28', createdAt: '2026-01-15T08:00:00Z' },
+  { id: 'pr7', title: 'Payment Integration', description: 'Integrate multiple payment providers', assignee: 'Fajar Nugroho', status: 'in-progress', priority: 'urgent', deadline: '2026-03-20', createdAt: '2026-02-05T08:00:00Z' },
+  { id: 'pr8', title: 'Data Pipeline Optimization', description: 'Optimize ETL pipelines for faster processing', assignee: 'Budi Santoso', status: 'backlog', priority: 'low', deadline: '2026-07-01', createdAt: '2026-02-20T08:00:00Z' },
+];
+
+export const SEED_TASKS: ProjectTask[] = [
+  { id: 'tk1', projectId: 'pr1', title: 'Design new product page layout', assignee: 'Maya Putri', status: 'done', priority: 'high', createdAt: '2026-01-06T08:00:00Z' },
+  { id: 'tk2', projectId: 'pr1', title: 'Implement responsive cart component', assignee: 'Budi Santoso', status: 'in-progress', priority: 'high', createdAt: '2026-01-08T08:00:00Z' },
+  { id: 'tk3', projectId: 'pr1', title: 'Add checkout flow animations', assignee: 'Rizky Firmansyah', status: 'todo', priority: 'medium', createdAt: '2026-01-10T08:00:00Z' },
+  { id: 'tk4', projectId: 'pr2', title: 'Fix push notification crashes', assignee: 'Rizky Firmansyah', status: 'in-progress', priority: 'high', createdAt: '2026-01-12T08:00:00Z' },
+  { id: 'tk5', projectId: 'pr2', title: 'Implement biometric login', assignee: 'Fajar Nugroho', status: 'todo', priority: 'medium', createdAt: '2026-01-15T08:00:00Z' },
+  { id: 'tk6', projectId: 'pr4', title: 'Build chart components', assignee: 'Budi Santoso', status: 'done', priority: 'high', createdAt: '2026-02-02T08:00:00Z' },
+  { id: 'tk7', projectId: 'pr4', title: 'Connect real-time data feeds', assignee: 'Fajar Nugroho', status: 'in-progress', priority: 'high', createdAt: '2026-02-05T08:00:00Z' },
+  { id: 'tk8', projectId: 'pr7', title: 'Setup Stripe webhook handlers', assignee: 'Fajar Nugroho', status: 'in-progress', priority: 'high', createdAt: '2026-02-06T08:00:00Z' },
+  { id: 'tk9', projectId: 'pr7', title: 'Add Midtrans payment provider', assignee: 'Rizky Firmansyah', status: 'todo', priority: 'medium', createdAt: '2026-02-08T08:00:00Z' },
+  { id: 'tk10', projectId: 'pr3', title: 'Design client dashboard wireframes', assignee: 'Maya Putri', status: 'todo', priority: 'medium', createdAt: '2026-01-22T08:00:00Z' },
+];
+
+export const SEED_CLIENTS: Client[] = [
+  { id: 'cl1', name: 'Ahmad Fauzi', company: 'PT Maju Sejahtera', email: 'ahmad@majusejahtera.co.id', phone: '+62 811-1111-1111', status: 'active', dealValue: 75000, notes: 'Long-term manufacturing client', lastContact: '2026-03-05', createdAt: '2025-06-01T08:00:00Z' },
+  { id: 'cl2', name: 'Linda Wijaya', company: 'Tokoku Digital', email: 'linda@tokoku.co.id', phone: '+62 812-2222-2222', status: 'active', dealValue: 35000, notes: 'E-commerce platform rebuild', lastContact: '2026-03-07', createdAt: '2025-07-15T08:00:00Z' },
+  { id: 'cl3', name: 'Dr. Suharto', company: 'Rumah Sakit Harapan', email: 'suharto@rsharapan.co.id', phone: '+62 813-3333-3333', status: 'active', dealValue: 120000, notes: 'EHR implementation completed', lastContact: '2026-02-20', createdAt: '2025-08-10T08:00:00Z' },
+  { id: 'cl4', name: 'Rini Susanti', company: 'Bank Nusantara', email: 'rini@banknusantara.co.id', phone: '+62 814-4444-4444', status: 'active', dealValue: 200000, notes: 'Core banking modernization', lastContact: '2026-03-06', createdAt: '2025-09-20T08:00:00Z' },
+  { id: 'cl5', name: 'Pak Darmawan', company: 'Sekolah Pintar', email: 'darmawan@sekolahpintar.id', phone: '+62 815-5555-5555', status: 'lead', dealValue: 15000, notes: 'Interested in LMS solution', lastContact: '2026-02-28', createdAt: '2025-10-05T08:00:00Z' },
+  { id: 'cl6', name: 'Yusuf Hakim', company: 'Trans Logistik', email: 'yusuf@translogistik.co.id', phone: '+62 816-6666-6666', status: 'prospect', dealValue: 40000, notes: 'Fleet management proposal sent', lastContact: '2026-03-01', createdAt: '2025-11-12T08:00:00Z' },
+  { id: 'cl7', name: 'Mega Sari', company: 'Media Kreatif Co', email: 'mega@mediakreatif.com', phone: '+62 817-7777-7777', status: 'active', dealValue: 18000, notes: 'CMS project ongoing', lastContact: '2026-03-04', createdAt: '2025-12-01T08:00:00Z' },
+  { id: 'cl8', name: 'Bambang Irawan', company: 'GovTech Solutions', email: 'bambang@govtech.go.id', phone: '+62 818-8888-8888', status: 'lead', dealValue: 150000, notes: 'Government portal tender', lastContact: '2026-03-08', createdAt: '2026-01-20T08:00:00Z' },
+  { id: 'cl9', name: 'Rina Kartika', company: 'Warung Nusantara', email: 'rina@warungnusantara.id', phone: '+62 819-9999-9999', status: 'prospect', dealValue: 12000, notes: 'POS system inquiry', lastContact: '2026-03-03', createdAt: '2026-02-01T08:00:00Z' },
+  { id: 'cl10', name: 'Hadi Pranoto', company: 'Kebun Raya Agri', email: 'hadi@kebunraya.co.id', phone: '+62 821-0000-0000', status: 'inactive', dealValue: 60000, notes: 'Project archived - budget constraints', lastContact: '2026-01-15', createdAt: '2025-08-20T08:00:00Z' },
+];
+
+export const SEED_FINANCE: FinanceRecord[] = [
+  { id: 'f1', type: 'income', category: 'Project', description: 'E-Commerce Platform - Phase 1', amount: 25000, date: '2026-01-15', invoiceNumber: 'INV-2026-001', status: 'paid', createdAt: '2026-01-15T08:00:00Z' },
+  { id: 'f2', type: 'income', category: 'Project', description: 'Mobile App v2.0 - Deposit', amount: 15000, date: '2026-01-20', invoiceNumber: 'INV-2026-002', status: 'paid', createdAt: '2026-01-20T08:00:00Z' },
+  { id: 'f3', type: 'expense', category: 'Salary', description: 'Team salaries - January', amount: 18000, date: '2026-01-31', status: 'paid', createdAt: '2026-01-31T08:00:00Z' },
+  { id: 'f4', type: 'expense', category: 'Infrastructure', description: 'Cloud hosting - AWS', amount: 2500, date: '2026-02-01', status: 'paid', createdAt: '2026-02-01T08:00:00Z' },
+  { id: 'f5', type: 'income', category: 'Consulting', description: 'Bank Nusantara - Advisory', amount: 10000, date: '2026-02-10', invoiceNumber: 'INV-2026-003', status: 'paid', createdAt: '2026-02-10T08:00:00Z' },
+  { id: 'f6', type: 'expense', category: 'Marketing', description: 'Google Ads campaign', amount: 3000, date: '2026-02-15', status: 'paid', createdAt: '2026-02-15T08:00:00Z' },
+  { id: 'f7', type: 'income', category: 'SaaS', description: 'Dashboard Pro subscriptions - Feb', amount: 8500, date: '2026-02-28', invoiceNumber: 'INV-2026-004', status: 'paid', createdAt: '2026-02-28T08:00:00Z' },
+  { id: 'f8', type: 'expense', category: 'Salary', description: 'Team salaries - February', amount: 18000, date: '2026-02-28', status: 'paid', createdAt: '2026-02-28T08:00:00Z' },
+  { id: 'f9', type: 'income', category: 'Project', description: 'Payment Integration - Milestone 1', amount: 12000, date: '2026-03-05', invoiceNumber: 'INV-2026-005', status: 'pending', createdAt: '2026-03-05T08:00:00Z' },
+  { id: 'f10', type: 'expense', category: 'Office', description: 'Office rent - March', amount: 2000, date: '2026-03-01', status: 'paid', createdAt: '2026-03-01T08:00:00Z' },
+  { id: 'f11', type: 'income', category: 'Consulting', description: 'RS Harapan - Final payment', amount: 30000, date: '2026-03-10', invoiceNumber: 'INV-2026-006', status: 'overdue', createdAt: '2026-03-01T08:00:00Z' },
+  { id: 'f12', type: 'expense', category: 'Software', description: 'Figma + GitHub licenses', amount: 800, date: '2026-03-01', status: 'paid', createdAt: '2026-03-01T08:00:00Z' },
+];
+
+export const SEED_PRODUCT_FEATURES: ProductFeature[] = [
+  { id: 'pf1', product: 'Dashboard Pro', title: 'Real-time data refresh', description: 'Auto-refresh dashboard data every 30 seconds', type: 'feature', status: 'released', priority: 'high', version: '2.1.0', createdAt: '2025-11-01T08:00:00Z' },
+  { id: 'pf2', product: 'Dashboard Pro', title: 'Export to PDF', description: 'Allow users to export dashboards as PDF reports', type: 'feature', status: 'in-development', priority: 'medium', version: '2.2.0', createdAt: '2026-01-10T08:00:00Z' },
+  { id: 'pf3', product: 'ChatFlow', title: 'Multi-language support', description: 'Support for Bahasa, English, and Mandarin', type: 'feature', status: 'planned', priority: 'high', createdAt: '2026-02-01T08:00:00Z' },
+  { id: 'pf4', product: 'ChatFlow', title: 'Message threading broken', description: 'Thread replies not appearing under parent message', type: 'bug', status: 'in-development', priority: 'critical', version: '1.5.1', createdAt: '2026-02-15T08:00:00Z' },
+  { id: 'pf5', product: 'ScheduleX', title: 'Google Calendar sync', description: 'Two-way sync with Google Calendar', type: 'feature', status: 'testing', priority: 'high', version: '1.3.0', createdAt: '2026-01-20T08:00:00Z' },
+  { id: 'pf6', product: 'ScheduleX', title: 'Timezone display incorrect', description: 'Events show wrong time for UTC+7 users', type: 'bug', status: 'in-development', priority: 'high', version: '1.2.5', createdAt: '2026-02-20T08:00:00Z' },
+  { id: 'pf7', product: 'StoreFront', title: 'Inventory management module', description: 'Track stock levels and auto-reorder thresholds', type: 'feature', status: 'planned', priority: 'high', createdAt: '2026-02-10T08:00:00Z' },
+  { id: 'pf8', product: 'Dashboard Pro', title: 'Improve chart rendering speed', description: 'Optimize canvas rendering for large datasets', type: 'improvement', status: 'testing', priority: 'medium', version: '2.2.0', createdAt: '2026-02-25T08:00:00Z' },
+  { id: 'pf9', product: 'PayEase', title: 'Multi-currency support', description: 'Accept IDR, USD, SGD, MYR payments', type: 'feature', status: 'planned', priority: 'high', createdAt: '2026-03-01T08:00:00Z' },
+  { id: 'pf10', product: 'TeamHub', title: 'File sharing limit increase', description: 'Raise file upload limit from 10MB to 50MB', type: 'improvement', status: 'released', priority: 'low', version: '0.9.2', createdAt: '2026-01-05T08:00:00Z' },
+];
+
+export const SEED_DOCUMENTS: Document[] = [
+  { id: 'd1', title: 'Employee Onboarding Guide', category: 'sop', content: 'Step-by-step guide for onboarding new team members including tool setup, account creation, and first-week checklist.', author: 'Siti Rahayu', updatedAt: '2026-02-15T08:00:00Z', createdAt: '2025-06-01T08:00:00Z' },
+  { id: 'd2', title: 'Code Review Standards', category: 'sop', content: 'Guidelines for conducting code reviews including checklist items, approval process, and quality standards.', author: 'Budi Santoso', updatedAt: '2026-01-20T08:00:00Z', createdAt: '2025-07-10T08:00:00Z' },
+  { id: 'd3', title: 'Privacy Policy Template', category: 'legal', content: 'Standard privacy policy template for client projects covering data collection, usage, and GDPR compliance.', author: 'Andi Prasetyo', updatedAt: '2026-03-01T08:00:00Z', createdAt: '2025-04-15T08:00:00Z' },
+  { id: 'd4', title: 'Service Level Agreement', category: 'legal', content: 'SLA template defining uptime guarantees, response times, and support tiers for client agreements.', author: 'Andi Prasetyo', updatedAt: '2025-12-10T08:00:00Z', createdAt: '2025-05-20T08:00:00Z' },
+  { id: 'd5', title: 'Dashboard Pro API Documentation', category: 'product', content: 'Complete API reference for Dashboard Pro including authentication, endpoints, webhooks, and rate limits.', author: 'Fajar Nugroho', updatedAt: '2026-02-28T08:00:00Z', createdAt: '2025-09-01T08:00:00Z' },
+  { id: 'd6', title: 'ChatFlow Integration Guide', category: 'product', content: 'How to integrate ChatFlow with websites, mobile apps, and third-party platforms via SDK and REST API.', author: 'Rizky Firmansyah', updatedAt: '2026-01-15T08:00:00Z', createdAt: '2025-10-10T08:00:00Z' },
+  { id: 'd7', title: 'Company Brand Guidelines', category: 'general', content: 'Brand identity guidelines including logo usage, color palette, typography, and tone of voice.', author: 'Maya Putri', updatedAt: '2026-02-01T08:00:00Z', createdAt: '2025-03-01T08:00:00Z' },
+  { id: 'd8', title: 'Deployment Checklist', category: 'sop', content: 'Pre-deployment and post-deployment checklist for production releases.', author: 'Budi Santoso', updatedAt: '2026-03-05T08:00:00Z', createdAt: '2025-08-15T08:00:00Z' },
+  { id: 'd9', title: 'Client Proposal Template', category: 'general', content: 'Standard proposal template including project scope, timeline, pricing, and terms.', author: 'Siti Rahayu', updatedAt: '2026-01-10T08:00:00Z', createdAt: '2025-06-20T08:00:00Z' },
+  { id: 'd10', title: 'Incident Response Plan', category: 'sop', content: 'Procedures for handling security incidents, outages, and data breaches.', author: 'Andi Prasetyo', updatedAt: '2026-02-20T08:00:00Z', createdAt: '2025-11-01T08:00:00Z' },
 ];
