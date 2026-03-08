@@ -16,6 +16,7 @@ const STORAGE_KEYS = {
   saas: 'admin_saas',
   contactInfo: 'admin_contact_info',
   consultations: 'admin_consultations',
+  team: 'admin_team',
 };
 
 function useLocalStorage<T>(key: string, initialValue: T): [T, (value: T | ((prev: T) => T)) => void] {
